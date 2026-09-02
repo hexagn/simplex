@@ -8,8 +8,7 @@ import {
   Calendar, 
   Menu, 
   X, 
-  ChevronRight, 
-  SlidersHorizontal
+  ChevronRight
 } from 'lucide-react';
 import { MoodboardItem, StoneProduct } from '../types';
 
@@ -157,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="w-1.5 h-1.5 rounded-full bg-[#8F704D]"></span>
               </div>
               <span className="text-[8px] tracking-[0.35em] uppercase text-[#8C8579] font-medium font-outfit pl-0.5">
-                Stone Atelier • Mumbai, India
+                marble • separator • granite • tiles
               </span>
             </a>
 
@@ -194,20 +193,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Compact Action Bar */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              {/* Stone Comparator Chip */}
-              {totalCompare > 0 && (
-                <button
-                  onClick={handleOpenCompare}
-                  className="relative p-2 rounded-full text-[#8F704D] bg-[#FFFFFF] hover:bg-[#F3F1EC] border border-[#DCD9D1] transition-all cursor-pointer shadow-xs"
-                  title="Compare Selected Slabs"
-                >
-                  <SlidersHorizontal className="w-3.5 h-3.5" />
-                  <span className="absolute -top-1 -right-1 bg-[#8F704D] text-white font-bold text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center">
-                    {totalCompare}
-                  </span>
-                </button>
-              )}
-
               {/* Moodboard Swatch Tray */}
               <button
                 onClick={handleOpenMoodboard}

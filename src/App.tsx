@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
+import { AboutSection } from './components/AboutSection';
+import { TestimonialSection } from './components/TestimonialSection';
 import { CategorySpotlight } from './components/CategorySpotlight';
 import { InteractiveVisualizerSection } from './components/InteractiveVisualizerSection';
 import { CatalogPage } from './components/CatalogPage';
@@ -355,6 +357,13 @@ export function App() {
               onSelectProduct={handleOpenProductDetail}
             />
 
+            {/* Curated About & Heritage Section */}
+            <AboutSection
+              onLearnMore={() => handleNavigate('about')}
+              onBookConsultation={() => handleRequestConsultation('Private Showroom & Yard Viewing')}
+              onExploreCatalog={() => handleNavigate('catalog', 'all')}
+            />
+
             {/* 4 Categorical Stone Bento Spotlight */}
             <CategorySpotlight
               onSelectCategory={(cat) => handleSelectCategoryAndNavigate(cat)}
@@ -488,6 +497,12 @@ export function App() {
                 </div>
               </div>
             </section>
+
+            {/* Architectural Endorsements & Client Testimonials */}
+            <TestimonialSection
+              onRequestConsultation={handleRequestConsultation}
+              onExploreProjects={() => handleNavigate('projects')}
+            />
           </div>
         )}
 

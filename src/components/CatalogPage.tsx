@@ -545,9 +545,9 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
                       <span className="px-2.5 py-0.5 rounded-full bg-[#FFFFFF]/90 backdrop-blur-md text-[#8F704D] text-[9px] font-semibold tracking-wider uppercase border border-[#DCD9D1]">
                         {product.rarity.split(' ')[0]}
                       </span>
-                      <span className="px-2 py-0.5 rounded-full bg-[#FFFFFF]/90 backdrop-blur-md text-[#1A1A1A] text-[9px] tracking-wider uppercase border border-[#DCD9D1] font-medium">
+                      {/* <span className="px-2 py-0.5 rounded-full bg-[#FFFFFF]/90 backdrop-blur-md text-[#1A1A1A] text-[9px] tracking-wider uppercase border border-[#DCD9D1] font-medium">
                         {product.inStockSlabs} Slabs
-                      </span>
+                      </span> */}
                     </div>
 
                     {/* Floating Action Overlay */}
@@ -600,18 +600,6 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
                       <p className="text-[11px] text-[#5C574F] line-clamp-2 mt-1 leading-relaxed font-light">
                         {product.description}
                       </p>
-                    </div>
-
-                    {/* Stone Specs Micro Grid */}
-                    <div className="pt-2 border-t border-[#E5E2DA] grid grid-cols-2 gap-2 text-[10px] text-[#5C574F]">
-                      <div>
-                        <span className="text-[#7D776E] block">Texture:</span>
-                        <span className="truncate block font-medium text-[#1A1A1A]">{product.texture}</span>
-                      </div>
-                      <div>
-                        <span className="text-[#7D776E] block">Thickness:</span>
-                        <span className="font-medium text-[#1A1A1A]">{product.specs.availableThicknesses.join(', ')}</span>
-                      </div>
                     </div>
 
                     {/* Card Actions */}

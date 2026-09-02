@@ -183,10 +183,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <span className="px-2.5 py-1 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md text-[#8F704D] text-[9px] font-semibold tracking-[0.2em] uppercase border border-[#DCD9D1] font-outfit">
                       {activeStone.rarity.split(' ')[0]} Reserve
                     </span>
-                    <span className="px-2.5 py-1 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md text-[#1A1A1A] text-[9px] tracking-[0.14em] uppercase border border-[#DCD9D1] flex items-center gap-1.5 font-medium font-outfit">
+                    {/* <span className="px-2.5 py-1 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md text-[#1A1A1A] text-[9px] tracking-[0.14em] uppercase border border-[#DCD9D1] flex items-center gap-1.5 font-medium font-outfit">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                       {activeStone.inStockSlabs} Slabs Ready
-                    </span>
+                    </span> */}
                   </div>
 
                   {/* Direct Inspection Action */}
@@ -224,9 +224,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         </p>
                       )}
                     </div>
-                    <span className="text-xs font-semibold tracking-widest text-[#8F704D] font-mono">
-                      {activeStone.priceTier}
-                    </span>
                   </div>
 
                   <p className="text-xs text-[#59544C] line-clamp-2 leading-relaxed font-light">

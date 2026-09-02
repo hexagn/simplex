@@ -304,13 +304,6 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 <span className="px-3 py-1 rounded-full bg-[#FFFFFF] text-[#8F704D] text-xs font-semibold border border-[#DCD9D1] shadow-xs">
                   {product.rarity}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-[#FFFFFF] text-emerald-600 text-xs font-medium border border-emerald-500/20 flex items-center gap-1.5 shadow-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-                  {product.inStockSlabs} Slabs in Stock
-                </span>
-                <span className="px-3 py-1 rounded-full bg-[#FFFFFF] text-[#5C574F] text-xs border border-[#DCD9D1] shadow-xs">
-                  Price Tier: {product.priceTier}
-                </span>
               </div>
 
               {/* Description & Architectural Notes */}
@@ -352,48 +345,6 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   <Send className="w-4 h-4" />
                   <span>Request Trade Quotation & Slab Allocation</span>
                 </button>
-
-                {/* 2. Order Sample Kit */}
-                <button
-                  onClick={() => onRequestSample(product)}
-                  className="w-full py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#F8F7F4] text-[#1A1A1A] border border-[#DCD9D1] hover:border-[#8F704D] text-xs font-semibold tracking-wider uppercase transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-                >
-                  <PackagePlus className="w-4 h-4 text-[#8F704D]" />
-                  <span>Order 150×150mm Hand-Polished Sample Box</span>
-                </button>
-
-                {/* Secondary Action Grid */}
-                <div className="grid grid-cols-3 gap-2">
-                  <button
-                    onClick={() => onAddToMoodboard(product)}
-                    className={`py-2.5 rounded-lg text-[11px] font-medium tracking-wider uppercase border transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs ${
-                      isSavedInMoodboard
-                        ? 'bg-[#1A1A1A] text-white border-[#1A1A1A]'
-                        : 'bg-[#FFFFFF] text-[#5C574F] border-[#DCD9D1] hover:bg-[#F8F7F4]'
-                    }`}
-                  >
-                    <Bookmark className="w-3.5 h-3.5" />
-                    <span className="truncate">{isSavedInMoodboard ? 'Saved' : 'Moodboard'}</span>
-                  </button>
-
-                  <button
-                    onClick={() => onToggleCompare(product)}
-                    className="py-2.5 rounded-lg bg-[#FFFFFF] hover:bg-[#F8F7F4] text-[#5C574F] border border-[#DCD9D1] text-[11px] font-medium tracking-wider uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
-                  >
-                    <Sliders className="w-3.5 h-3.5" />
-                    <span>{isCompared ? 'Comparing' : 'Compare'}</span>
-                  </button>
-
-                  <button
-                    onClick={handleDownloadBIM}
-                    className="py-2.5 rounded-lg bg-[#FFFFFF] hover:bg-[#F8F7F4] text-[#5C574F] border border-[#DCD9D1] text-[11px] font-medium tracking-wider uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
-                    title="Download High-Res 4K Seamless Texture & BIM Specs"
-                  >
-                    {downloadSuccess ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Download className="w-3.5 h-3.5" />}
-                    <span>{downloadSuccess ? 'Downloaded' : 'BIM / 4K'}</span>
-                  </button>
-                </div>
-
               </div>
 
             </div>
