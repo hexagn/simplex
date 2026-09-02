@@ -61,12 +61,16 @@ export const ProjectGalleryPage: React.FC<ProjectGalleryPageProps> = ({
               </p>
             </div>
 
-            <button
-              onClick={() => onRequestConsultation('Architectural Project')}
-              className="px-6 py-3.5 rounded-full bg-[#FFFFFF] hover:bg-[#1A1A1A] hover:text-white text-[#1A1A1A] border border-[#DCD9D1] text-xs font-semibold tracking-wider uppercase transition-all cursor-pointer shadow-xs"
+            <a
+              href="/contact?topic=Architectural%20Project"
+              onClick={(e) => {
+                e.preventDefault();
+                onRequestConsultation('Architectural Project');
+              }}
+              className="px-6 py-3.5 rounded-full bg-[#FFFFFF] hover:bg-[#1A1A1A] hover:text-white text-[#1A1A1A] border border-[#DCD9D1] text-xs font-semibold tracking-wider uppercase transition-all cursor-pointer shadow-xs inline-flex items-center justify-center"
             >
               Submit Architectural RFQ
-            </button>
+            </a>
           </div>
         </div>
 

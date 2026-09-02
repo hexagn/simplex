@@ -74,9 +74,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
           
           {/* Col 1: Brand (Col 2 span) */}
           <div className="lg:col-span-2 space-y-4">
-            <div 
-              onClick={() => onNavigate('home')} 
-              className="flex items-center gap-2 cursor-pointer group"
+            <a 
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('home');
+              }} 
+              className="flex items-center gap-2 cursor-pointer group inline-flex"
             >
               <div className="w-8 h-8 rounded-lg bg-[#C5A880] flex items-center justify-center text-[#1A1A1A] font-cinzel font-bold text-lg shadow-sm">
                 S
@@ -84,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
               <span className="font-cinzel text-xl font-bold tracking-[0.25em] text-[#F8F7F4] group-hover:text-[#C5A880] transition-colors">
                 SIMPLEX
               </span>
-            </div>
+            </a>
 
             <p className="text-xs text-[#A8A298] font-light leading-relaxed max-w-sm">
               Mumbai's premier purveyor of imported Italian marble, structural magmatic granite, large-format sintered porcelain, and translucent gemological quartzites since 1988.
@@ -104,44 +108,69 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
             </h4>
             <ul className="space-y-2 text-[#C4BDAF]">
               <li>
-                <button 
-                  onClick={() => { onSelectCategory('marble'); onNavigate('catalog'); }}
-                  className="hover:text-[#C5A880] transition-colors cursor-pointer"
+                <a 
+                  href="/catalog?category=marble"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectCategory('marble');
+                    onNavigate('catalog');
+                  }}
+                  className="hover:text-[#C5A880] transition-colors cursor-pointer block"
                 >
                   Italian & Heritage Marble (50 Slabs)
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => { onSelectCategory('granite'); onNavigate('catalog'); }}
-                  className="hover:text-[#C5A880] transition-colors cursor-pointer"
+                <a 
+                  href="/catalog?category=granite"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectCategory('granite');
+                    onNavigate('catalog');
+                  }}
+                  className="hover:text-[#C5A880] transition-colors cursor-pointer block"
                 >
                   Exotic & Indian Granite (50 Slabs)
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => { onSelectCategory('tiles'); onNavigate('catalog'); }}
-                  className="hover:text-[#C5A880] transition-colors cursor-pointer"
+                <a 
+                  href="/catalog?category=tiles"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectCategory('tiles');
+                    onNavigate('catalog');
+                  }}
+                  className="hover:text-[#C5A880] transition-colors cursor-pointer block"
                 >
                   Sintered Architectural Tiles (50 Slabs)
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => { onSelectCategory('quartzite_onyx'); onNavigate('catalog'); }}
-                  className="hover:text-[#C5A880] transition-colors cursor-pointer"
+                <a 
+                  href="/catalog?category=quartzite_onyx"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectCategory('quartzite_onyx');
+                    onNavigate('catalog');
+                  }}
+                  className="hover:text-[#C5A880] transition-colors cursor-pointer block"
                 >
                   Quartzite & Translucent Onyx (50 Slabs)
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => { onSelectCategory('all'); onNavigate('catalog'); }}
-                  className="hover:text-[#C5A880] transition-colors cursor-pointer text-[#C5A880] font-medium"
+                <a 
+                  href="/catalog"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectCategory('all');
+                    onNavigate('catalog');
+                  }}
+                  className="hover:text-[#C5A880] transition-colors cursor-pointer text-[#C5A880] font-medium block"
                 >
                   View Complete 200 Slab Catalog →
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -153,44 +182,64 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
             </h4>
             <ul className="space-y-2 text-[#C4BDAF]">
               <li>
-                <button 
-                  onClick={() => onNavigate('home')}
-                  className="hover:text-[#C5A880] transition-colors cursor-pointer"
+                <a 
+                  href="/visualizer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('visualizer');
+                  }}
+                  className="hover:text-[#C5A880] transition-colors cursor-pointer block"
                 >
                   Bookmatch Symmetry Simulator
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => onNavigate('projects')}
-                  className="hover:text-[#C5A880] transition-colors cursor-pointer"
+                <a 
+                  href="/projects"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('projects');
+                  }}
+                  className="hover:text-[#C5A880] transition-colors cursor-pointer block"
                 >
                   Indian Architectural Projects
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => onNavigate('contact')}
-                  className="hover:text-[#C5A880] transition-colors cursor-pointer"
+                <a 
+                  href="/contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('contact');
+                  }}
+                  className="hover:text-[#C5A880] transition-colors cursor-pointer block"
                 >
                   Sample Swatch Box Courier (Pan-India)
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => onNavigate('blogs')}
-                  className="hover:text-[#C5A880] transition-colors cursor-pointer"
+                <a 
+                  href="/blogs"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('blogs');
+                  }}
+                  className="hover:text-[#C5A880] transition-colors cursor-pointer block"
                 >
                   Indian Architectural Monographs
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => onNavigate('about')}
-                  className="hover:text-[#C5A880] transition-colors cursor-pointer"
+                <a 
+                  href="/about"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('about');
+                  }}
+                  className="hover:text-[#C5A880] transition-colors cursor-pointer block"
                 >
                   Mumbai Flagship & JNPT Yard
-                </button>
+                </a>
               </li>
             </ul>
           </div>

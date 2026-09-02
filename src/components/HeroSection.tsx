@@ -96,21 +96,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2"
             >
-              <button
-                onClick={() => onExploreCatalog ? onExploreCatalog() : onExploreCollections?.()}
+              <a
+                href="/catalog"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onExploreCatalog) onExploreCatalog();
+                  else onExploreCollections?.();
+                }}
                 className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#1A1A1A] hover:bg-[#33302B] text-white font-medium text-[11px] tracking-[0.2em] uppercase font-outfit flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 shadow-sm cursor-pointer"
               >
                 <span>View 200+ Slabs In Mumbai Yard</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+              </a>
 
-              <button
-                onClick={onOpenVisualizer}
+              <a
+                href="/visualizer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onOpenVisualizer) onOpenVisualizer();
+                }}
                 className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#FFFFFF] hover:bg-[#F3F1EC] text-[#1A1A1A] border border-[#DCD9D1] hover:border-[#8F704D] font-medium text-[11px] tracking-[0.2em] uppercase font-outfit flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs"
               >
                 <Layers className="w-3.5 h-3.5 text-[#8F704D]" />
                 <span>Bookmatch Simulator</span>
-              </button>
+              </a>
             </motion.div>
 
             {/* Architectural Trust Strip */}

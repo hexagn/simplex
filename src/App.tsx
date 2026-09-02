@@ -18,13 +18,88 @@ import { allProducts, getProductById, getProductByName } from './data/products';
 import { projectCaseStudies } from './data/projects';
 import { blogPosts } from './data/blogs';
 
+// URL Parsing and Synchronization Helpers
+function parseUrlLocation(): { page: string; category: string; stoneId?: string; topic?: string } {
+  try {
+    const path = window.location.pathname.toLowerCase().replace(/\/+$/, '') || '/';
+    const hash = window.location.hash.toLowerCase().replace(/^#\/?/, '').split('?')[0];
+    const searchStr = window.location.search || (window.location.hash.includes('?') ? '?' + window.location.hash.split('?')[1] : '');
+    const searchParams = new URLSearchParams(searchStr);
+
+    let page = 'home';
+    const target = hash || path.replace(/^\//, '');
+
+    if (!target || target === 'home') {
+      page = 'home';
+    } else if (['catalog', 'collection', 'collections'].includes(target)) {
+      page = 'catalog';
+    } else if (['visualizer', 'atelier'].includes(target)) {
+      page = 'visualizer';
+    } else if (['projects', 'gallery', 'case-studies'].includes(target)) {
+      page = 'projects';
+    } else if (['about', 'heritage', 'story'].includes(target)) {
+      page = 'about';
+    } else if (['blogs', 'journal', 'insights'].includes(target)) {
+      page = 'blogs';
+    } else if (['contact', 'inquire', 'consultation'].includes(target)) {
+      page = 'contact';
+    }
+
+    const category = searchParams.get('category') || 'all';
+    const stoneId = searchParams.get('stone') || searchParams.get('id') || undefined;
+    const topic = searchParams.get('topic') || undefined;
+
+    return { page, category, stoneId, topic };
+  } catch (e) {
+    return { page: 'home', category: 'all' };
+  }
+}
+
+function syncBrowserUrl(page: string, category: string = 'all', stoneId?: string, topic?: string, replace: boolean = false) {
+  try {
+    const path = page === 'home' ? '/' : `/${page}`;
+    const params = new URLSearchParams();
+
+    if (page === 'catalog' && category && category !== 'all') {
+      params.set('category', category);
+    }
+    if (stoneId) {
+      params.set('stone', stoneId);
+    }
+    if (topic && page === 'contact') {
+      params.set('topic', topic);
+    }
+
+    const qs = params.toString();
+    const fullUrl = qs ? `${path}?${qs}` : path;
+    const currentUrl = window.location.pathname + window.location.search;
+
+    if (currentUrl !== fullUrl) {
+      if (replace) {
+        window.history.replaceState({ page, category, stoneId, topic }, '', fullUrl);
+      } else {
+        window.history.pushState({ page, category, stoneId, topic }, '', fullUrl);
+      }
+    }
+  } catch (e) {
+    console.error('Error syncing URL:', e);
+  }
+}
+
 export function App() {
+  const initialLoc = parseUrlLocation();
+
   // Navigation State
-  const [currentPage, setCurrentPage] = useState<string>('home');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [currentPage, setCurrentPage] = useState<string>(initialLoc.page);
+  const [selectedCategory, setSelectedCategory] = useState<string>(initialLoc.category);
 
   // Interactive Product Modal State
-  const [activeModalProduct, setActiveModalProduct] = useState<StoneProduct | null>(null);
+  const [activeModalProduct, setActiveModalProduct] = useState<StoneProduct | null>(() => {
+    if (initialLoc.stoneId) {
+      return getProductById(initialLoc.stoneId) || getProductByName(initialLoc.stoneId) || null;
+    }
+    return null;
+  });
 
   // Moodboard State with Local Storage persistence
   const [moodboard, setMoodboard] = useState<MoodboardItem[]>(() => {
@@ -73,7 +148,32 @@ export function App() {
   // Pre-filled RFQ context
   const [prefilledStoneForQuote, setPrefilledStoneForQuote] = useState<StoneProduct | null>(null);
   const [prefilledStonesForQuote, setPrefilledStonesForQuote] = useState<StoneProduct[]>([]);
-  const [prefilledTopicForContact, setPrefilledTopicForContact] = useState<string>('');
+  const [prefilledTopicForContact, setPrefilledTopicForContact] = useState<string>(initialLoc.topic || '');
+
+  // Listen to browser Back / Forward buttons and Hash changes
+  useEffect(() => {
+    const handleLocationChange = () => {
+      const loc = parseUrlLocation();
+      setCurrentPage(loc.page);
+      setSelectedCategory(loc.category);
+      if (loc.stoneId) {
+        const found = getProductById(loc.stoneId) || getProductByName(loc.stoneId);
+        setActiveModalProduct(found || null);
+      } else {
+        setActiveModalProduct(null);
+      }
+      if (loc.topic) {
+        setPrefilledTopicForContact(loc.topic);
+      }
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
+  }, []);
 
   // Persist moodboard to localStorage
   useEffect(() => {
@@ -89,6 +189,37 @@ export function App() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
+
+  // Unified Navigation Action with URL update
+  const handleNavigate = (page: string, category: string = 'all', topic?: string) => {
+    setCurrentPage(page);
+    setSelectedCategory(category);
+    if (topic) {
+      setPrefilledTopicForContact(topic);
+    }
+    syncBrowserUrl(page, category, undefined, topic);
+  };
+
+  const handleSelectCategoryAndNavigate = (cat: any) => {
+    setSelectedCategory(cat);
+    setCurrentPage('catalog');
+    syncBrowserUrl('catalog', cat);
+  };
+
+  const handleCategoryChangeInCatalog = (cat: any) => {
+    setSelectedCategory(cat);
+    syncBrowserUrl('catalog', cat, activeModalProduct?.slug || activeModalProduct?.id);
+  };
+
+  const handleOpenProductDetail = (product: StoneProduct) => {
+    setActiveModalProduct(product);
+    syncBrowserUrl(currentPage, selectedCategory, product.slug || product.id);
+  };
+
+  const handleCloseProductDetail = () => {
+    setActiveModalProduct(null);
+    syncBrowserUrl(currentPage, selectedCategory);
+  };
 
   // Moodboard actions
   const handleAddToMoodboard = (product: StoneProduct) => {
@@ -147,50 +278,45 @@ export function App() {
   const handleRequestQuote = (product: StoneProduct) => {
     setPrefilledStoneForQuote(product);
     setPrefilledStonesForQuote([]);
-    setActiveModalProduct(null);
-    setCurrentPage('contact');
+    handleCloseProductDetail();
+    handleNavigate('contact', 'all');
   };
 
   const handleRequestSample = (product: StoneProduct) => {
     setPrefilledStoneForQuote(product);
     setPrefilledStonesForQuote([]);
-    setActiveModalProduct(null);
-    setCurrentPage('contact');
+    handleCloseProductDetail();
+    handleNavigate('contact', 'all');
   };
 
   const handleSubmitMoodboardTradeInquiry = (stones: StoneProduct[]) => {
     setPrefilledStonesForQuote(stones);
     setPrefilledStoneForQuote(null);
     setIsMoodboardOpen(false);
-    setCurrentPage('contact');
+    handleNavigate('contact', 'all');
   };
 
   const handleRequestCompareQuote = (stones: StoneProduct[]) => {
     setPrefilledStonesForQuote(stones);
     setPrefilledStoneForQuote(null);
     setIsCompareModalOpen(false);
-    setCurrentPage('contact');
+    handleNavigate('contact', 'all');
   };
 
   const handleRequestConsultation = (topic: string) => {
     setPrefilledTopicForContact(topic);
     setPrefilledStoneForQuote(null);
     setPrefilledStonesForQuote([]);
-    setCurrentPage('contact');
+    handleNavigate('contact', 'all', topic);
   };
 
   const handleSelectStoneByName = (name: string) => {
     const found = getProductByName(name);
     if (found) {
-      setActiveModalProduct(found);
+      handleOpenProductDetail(found);
     } else {
-      setCurrentPage('catalog');
+      handleNavigate('catalog', 'all');
     }
-  };
-
-  const handleSelectCategoryAndNavigate = (cat: any) => {
-    setSelectedCategory(cat);
-    setCurrentPage('catalog');
   };
 
   return (
@@ -199,7 +325,7 @@ export function App() {
       {/* Top Fixed Navigation */}
       <Navbar
         currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
+        setCurrentPage={(page) => handleNavigate(page, 'all')}
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
         moodboardCount={moodboard.filter(m => m?.stone?.id).length}
@@ -217,9 +343,10 @@ export function App() {
           <div>
             {/* GSAP Fluid Hero Section */}
             <HeroSection
-              onExploreCollections={() => setCurrentPage('catalog')}
+              onExploreCollections={() => handleNavigate('catalog', 'all')}
+              onOpenVisualizer={() => handleNavigate('visualizer')}
               onBookConsultation={() => handleRequestConsultation('Private Showroom & Yard Viewing')}
-              onSelectProduct={(product) => setActiveModalProduct(product)}
+              onSelectProduct={handleOpenProductDetail}
             />
 
             {/* 4 Categorical Stone Bento Spotlight */}
@@ -229,7 +356,7 @@ export function App() {
 
             {/* Interactive Bookmatch & Kelvin Lighting Studio */}
             <InteractiveVisualizerSection
-              onSelectProduct={(product) => setActiveModalProduct(product)}
+              onSelectProduct={handleOpenProductDetail}
               onAddToMoodboard={handleAddToMoodboard}
               onRequestQuote={handleRequestQuote}
             />
@@ -246,19 +373,23 @@ export function App() {
                       Masterpiece Slabs in Stock
                     </h2>
                   </div>
-                  <button
-                    onClick={() => { setSelectedCategory('all'); setCurrentPage('catalog'); }}
-                    className="px-6 py-3 rounded-full bg-[#FFFFFF] hover:bg-[#F8F7F4] text-[#1A1A1A] border border-[#DCD9D1] text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-xs"
+                  <a
+                    href="/catalog"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigate('catalog', 'all');
+                    }}
+                    className="px-6 py-3 rounded-full bg-[#FFFFFF] hover:bg-[#F8F7F4] text-[#1A1A1A] border border-[#DCD9D1] text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-xs inline-flex items-center"
                   >
                     View All 200 Curated Slabs →
-                  </button>
+                  </a>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   {allProducts.filter(p => p.featured).slice(0, 8).map((stone) => (
                     <div
                       key={stone.id}
-                      onClick={() => setActiveModalProduct(stone)}
+                      onClick={() => handleOpenProductDetail(stone)}
                       className="group rounded-2xl overflow-hidden bg-[#F8F7F4] border border-[#DCD9D1] hover:border-[#8F704D] transition-all cursor-pointer shadow-xs flex flex-col justify-between"
                     >
                       <div className="relative h-60 w-full overflow-hidden bg-[#1A1A1A]">
@@ -306,19 +437,23 @@ export function App() {
                       Recent Architectural Case Studies
                     </h2>
                   </div>
-                  <button
-                    onClick={() => setCurrentPage('projects')}
-                    className="px-6 py-3 rounded-full bg-[#FFFFFF] hover:bg-[#F8F7F4] text-[#1A1A1A] border border-[#DCD9D1] text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-xs"
+                  <a
+                    href="/projects"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigate('projects');
+                    }}
+                    className="px-6 py-3 rounded-full bg-[#FFFFFF] hover:bg-[#F8F7F4] text-[#1A1A1A] border border-[#DCD9D1] text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-xs inline-flex items-center"
                   >
                     Explore All Project Case Studies →
-                  </button>
+                  </a>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {projectCaseStudies.slice(0, 3).map((proj) => (
                     <div
                       key={proj.id}
-                      onClick={() => setCurrentPage('projects')}
+                      onClick={() => handleNavigate('projects')}
                       className="group rounded-2xl overflow-hidden bg-[#FFFFFF] border border-[#DCD9D1] hover:border-[#8F704D] transition-all cursor-pointer shadow-xs flex flex-col justify-between"
                     >
                       <div className="relative h-64 w-full overflow-hidden bg-[#1A1A1A]">
@@ -354,8 +489,8 @@ export function App() {
         {currentPage === 'catalog' && (
           <CatalogPage
             selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-            onSelectProduct={(product) => setActiveModalProduct(product)}
+            setSelectedCategory={handleCategoryChangeInCatalog}
+            onSelectProduct={handleOpenProductDetail}
             onAddToMoodboard={handleAddToMoodboard}
             onToggleCompare={handleToggleCompare}
             comparisonStones={comparisonStones}
@@ -368,7 +503,7 @@ export function App() {
         {currentPage === 'visualizer' && (
           <div className="py-6 bg-[#F8F7F4] min-h-screen">
             <InteractiveVisualizerSection
-              onSelectProduct={(product) => setActiveModalProduct(product)}
+              onSelectProduct={handleOpenProductDetail}
               onAddToMoodboard={handleAddToMoodboard}
               onRequestQuote={handleRequestQuote}
             />
@@ -387,7 +522,7 @@ export function App() {
         {currentPage === 'about' && (
           <AboutPage
             onBookConsultation={() => handleRequestConsultation('Private Atelier & Quarry Visit')}
-            onExploreCatalog={() => setCurrentPage('catalog')}
+            onExploreCatalog={() => handleNavigate('catalog', 'all')}
           />
         )}
 
@@ -412,19 +547,19 @@ export function App() {
 
       {/* FOOTER */}
       <Footer
-        onNavigate={(page) => setCurrentPage(page)}
-        onSelectCategory={(cat) => handleSelectCategoryAndNavigate(cat)}
+        onNavigate={(page) => handleNavigate(page, 'all')}
+        onSelectCategory={handleSelectCategoryAndNavigate}
       />
 
       {/* PRODUCT DETAIL MODAL (HIGH-RES INSPECTOR & ROOM VISUALIZER) */}
       <ProductDetailModal
         product={activeModalProduct}
-        onClose={() => setActiveModalProduct(null)}
+        onClose={handleCloseProductDetail}
         onAddToMoodboard={handleAddToMoodboard}
         onToggleCompare={handleToggleCompare}
         onRequestQuote={handleRequestQuote}
         onRequestSample={handleRequestSample}
-        onSelectRelated={(product) => setActiveModalProduct(product)}
+        onSelectRelated={handleOpenProductDetail}
         isSavedInMoodboard={activeModalProduct ? moodboard.some(m => m?.stone?.id === activeModalProduct.id) : false}
         isCompared={activeModalProduct ? comparisonStones.some(s => s.id === activeModalProduct.id) : false}
       />
@@ -438,7 +573,7 @@ export function App() {
         onUpdateMoodboardItem={handleUpdateMoodboardItem}
         onSelectProduct={(product) => {
           setIsMoodboardOpen(false);
-          setActiveModalProduct(product);
+          handleOpenProductDetail(product);
         }}
         onSubmitTradeInquiry={handleSubmitMoodboardTradeInquiry}
       />
@@ -452,7 +587,7 @@ export function App() {
         onClearAll={() => setComparisonStones([])}
         onSelectProduct={(stone) => {
           setIsCompareModalOpen(false);
-          setActiveModalProduct(stone);
+          handleOpenProductDetail(stone);
         }}
         onAddToMoodboard={handleAddToMoodboard}
         onRequestQuote={handleRequestCompareQuote}

@@ -162,12 +162,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                 We operate our physical atelier and master slab inventory exclusively in Mumbai, offering private gantry crane viewings for architects, designers, and homeowners.
               </p>
             </div>
-            <button
-              onClick={onBookConsultation}
-              className="px-6 py-3 rounded-full bg-[#1A1A1A] hover:bg-[#33302B] text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-sm"
+            <a
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                onBookConsultation();
+              }}
+              className="px-6 py-3 rounded-full bg-[#1A1A1A] hover:bg-[#33302B] text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-sm inline-flex items-center justify-center"
             >
               Schedule Mumbai Viewing
-            </button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">

@@ -94,12 +94,12 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   // Simplified and smaller menu items for high-end luxury feel
   const navLinks = [
-    { label: 'Collection', view: 'catalog', code: '01' },
-    { label: 'Atelier', view: 'visualizer', code: '02' },
-    { label: 'Projects', view: 'projects', code: '03' },
-    { label: 'Heritage', view: 'about', code: '04' },
-    { label: 'Journal', view: 'blogs', code: '05' },
-    { label: 'Contact', view: 'contact', code: '06' },
+    { label: 'Collection', view: 'catalog', code: '01', href: '/catalog' },
+    { label: 'Atelier', view: 'visualizer', code: '02', href: '/visualizer' },
+    { label: 'Projects', view: 'projects', code: '03', href: '/projects' },
+    { label: 'Heritage', view: 'about', code: '04', href: '/about' },
+    { label: 'Journal', view: 'blogs', code: '05', href: '/blogs' },
+    { label: 'Contact', view: 'contact', code: '06', href: '/contact' },
   ];
 
   return (
@@ -142,8 +142,12 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Brand Logo - Sculptural & Elegant */}
-            <button
-              onClick={() => handleViewChange('home')}
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleViewChange('home');
+              }}
               className="group flex flex-col items-start text-left cursor-pointer focus:outline-none"
             >
               <div className="flex items-center gap-1.5">
@@ -155,16 +159,20 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="text-[8px] tracking-[0.35em] uppercase text-[#8C8579] font-medium font-outfit pl-0.5">
                 Stone Atelier • Mumbai, India
               </span>
-            </button>
+            </a>
 
             {/* Desktop Navigation - Smaller, Simpler, Crisp Tracking */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navLinks.map((link) => {
                 const isActive = activeView === link.view;
                 return (
-                  <button
+                  <a
                     key={link.view}
-                    onClick={() => handleViewChange(link.view)}
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleViewChange(link.view);
+                    }}
                     className={`relative text-[11px] tracking-[0.2em] uppercase font-medium font-outfit transition-all duration-200 py-1 cursor-pointer ${
                       isActive
                         ? 'text-[#1A1A1A] font-semibold'
@@ -179,7 +187,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                         transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                       />
                     )}
-                  </button>
+                  </a>
                 );
               })}
             </nav>
@@ -215,17 +223,21 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
 
               {/* Inquire Button */}
-              <button
-                onClick={() => handleOpenConsultation()}
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleOpenConsultation();
+                }}
                 className="hidden md:flex items-center gap-1.5 py-1.5 px-3.5 rounded-full bg-[#1A1A1A] hover:bg-[#33302B] text-white text-[10px] font-semibold tracking-[0.18em] uppercase font-outfit transition-all shadow-xs cursor-pointer"
               >
                 <span>Inquire</span>
-              </button>
+              </a>
 
               {/* Mobile Toggle */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-1.5 rounded-md text-[#1A1A1A] hover:bg-[#EAE7E0] transition-colors"
+                className="lg:hidden p-1.5 rounded-md text-[#1A1A1A] hover:bg-[#EAE7E0] transition-colors cursor-pointer"
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -246,9 +258,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <div className="space-y-1">
                 {navLinks.map((link) => (
-                  <button
+                  <a
                     key={link.view}
-                    onClick={() => handleViewChange(link.view)}
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleViewChange(link.view);
+                    }}
                     className={`w-full text-left px-3 py-2.5 rounded-lg flex items-center justify-between cursor-pointer font-outfit ${
                       activeView === link.view
                         ? 'bg-[#F4F1EB] text-[#8F704D] font-semibold'
@@ -260,13 +276,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <span className="text-xs tracking-[0.18em] uppercase">{link.label}</span>
                     </div>
                     <ChevronRight className="w-3.5 h-3.5 text-[#8F704D]" />
-                  </button>
+                  </a>
                 ))}
               </div>
 
               <div className="pt-2 border-t border-[#DCD9D1]">
-                <button
-                  onClick={() => {
+                <a
+                  href="/contact"
+                  onClick={(e) => {
+                    e.preventDefault();
                     handleOpenConsultation();
                     setMobileMenuOpen(false);
                   }}
@@ -274,7 +292,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   <Calendar className="w-3.5 h-3.5" />
                   <span>Book Atelier Consultation</span>
-                </button>
+                </a>
               </div>
             </motion.div>
           )}
