@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Quote, 
@@ -50,7 +50,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
       quote: 'Simplex is unparalleled in India for bookmatched marble precision. Their team at the JNPT yard dry-laid 28 sequential slabs under gantry cranes so my client and I could inspect every vein intersection before dispatch. The final installation in the double-height foyer is an architectural triumph.',
       highlight: 'Flawless 4-Way Bookmatching & Zero Vein Discontinuity',
       year: '2025 Realization',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85&stone=room&view=812'
     },
     {
       id: '2',
@@ -64,7 +64,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
       quote: 'Finding monolithic 30mm Italian marble slabs with sound crystal density in India used to be an ordeal. With Simplex, the direct Italian quarry provenance and ultrasonic test certificates gave our structural consultants complete confidence. Their white-glove transport to Delhi was seamless.',
       highlight: 'Certified Italian Quarry Concession & Sound Density',
       year: '2025 Realization',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85&stone=room&view=813'
     },
     {
       id: '3',
@@ -78,7 +78,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
       quote: 'For our resort’s floating cocktail pavilion, we required 45 backlit onyx panels and flamed granite surfaces that withstand coastal saline air. Simplex executed the CNC waterjet fabrication and provided sequential dry-lay maps that saved our site contractors three weeks of installation time.',
       highlight: 'Custom Waterjet Calibration & 3-Week Time Savings',
       year: '2026 Realization',
-      image: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=85&stone=room&view=814'
     },
     {
       id: '4',
@@ -92,7 +92,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
       quote: 'The level of curation at Simplex’s Worli atelier is unmatched. They don’t just sell stone; they act as geological consultants who understand architectural lighting, sealant chemistry, and bookmatched balance. My go-to partner for all marquee luxury projects.',
       highlight: 'Geological Advisory & Expert Lighting Integration',
       year: '2026 Realization',
-      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85&stone=room&view=815'
     },
     {
       id: '5',
@@ -106,7 +106,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
       quote: 'The chromatic consistency across 600 square meters of high-traffic flooring in our Jubilee Hills project was impeccable. Simplex provided moisture-resistant backing and calibrated edge-polishing that elevated the entire residence.',
       highlight: 'Impeccable Chromatic Consistency Across 6,500 Sq.Ft',
       year: '2026 Realization',
-      image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=85&stone=room&view=816'
     },
     // {
     //   id: '6',
@@ -125,6 +125,18 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto slide every 3 seconds
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, testimonials.length]);
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -137,7 +149,11 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
   const current = testimonials[currentIndex];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#F8F7F4] border-b border-[#DCD9D1] relative overflow-hidden">
+    <section 
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      className="py-20 lg:py-28 bg-[#F8F7F4] border-b border-[#DCD9D1] relative overflow-hidden"
+    >
       
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-[#8F704D]/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 -ml-20"></div>
@@ -171,9 +187,19 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
               <ChevronLeft className="w-5 h-5" />
             </button>
             
-            <span className="text-xs font-mono text-[#7D776E] px-2 font-medium">
-              0{currentIndex + 1} / 0{testimonials.length}
-            </span>
+            {/* Slide Dots */}
+            <div className="flex items-center gap-1.5 px-2">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                    currentIndex === idx ? 'w-6 bg-[#8F704D]' : 'w-1.5 bg-[#DCD9D1] hover:bg-[#A0988A]'
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
 
             <button
               onClick={nextTestimonial}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   ArrowRight, 
@@ -31,6 +31,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   const featuredStones = getFeaturedProducts().slice(0, 4);
   const [activeStoneIdx, setActiveStoneIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto slide every 3 seconds
+  useEffect(() => {
+    if (isPaused || featuredStones.length === 0) return;
+
+    const timer = setInterval(() => {
+      setActiveStoneIdx((prev) => (prev + 1) % featuredStones.length);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [isPaused, featuredStones.length]);
+
   const activeStone = featuredStones[activeStoneIdx] || featuredStones[0];
 
   return (
@@ -150,7 +163,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
 
           {/* Right Column: Hero Showcase Card with Smooth Transitions */}
-          <div className="lg:col-span-5">
+          <div 
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            className="lg:col-span-5"
+          >
             <motion.div
               initial={{ opacity: 0, scale: 0.96, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
