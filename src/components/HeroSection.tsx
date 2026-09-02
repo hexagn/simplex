@@ -10,7 +10,7 @@ import {
   Maximize2
 } from 'lucide-react';
 import { StoneProduct } from '../types';
-import { getFeaturedProducts } from '../data/products';
+import { getFeaturedProducts, allProducts } from '../data/products';
 
 interface HeroSectionProps {
   onExploreCatalog?: (category?: string) => void;
@@ -29,7 +29,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onSelectProduct,
   onRequestSampleKit
 }) => {
-  const featuredStones = getFeaturedProducts().slice(0, 4);
+  const featured = getFeaturedProducts();
+  const featuredStones = featured.length > 0 ? featured.slice(0, 4) : allProducts.slice(0, 4);
   const [activeStoneIdx, setActiveStoneIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -44,7 +45,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return () => clearInterval(timer);
   }, [isPaused, featuredStones.length]);
 
-  const activeStone = featuredStones[activeStoneIdx] || featuredStones[0];
+  const activeStone = featuredStones[activeStoneIdx] || featuredStones[0] || allProducts[0];
+  if (!activeStone) return null;
 
   return (
     <section className="relative min-h-[88vh] flex flex-col justify-center overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-20 border-b border-[#DCD9D1] bg-[#F8F7F4]">

@@ -150,6 +150,7 @@ export interface LeadInquiry {
 export interface MoodboardItem {
   stone: StoneProduct;
   customNote?: string;
+  notes?: string;
   allocatedRoom?: string;
   quantitySqFt?: number;
 }

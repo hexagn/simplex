@@ -29,17 +29,8 @@ export const InteractiveVisualizerSection: React.FC<InteractiveVisualizerProps> 
   onAddToMoodboard,
   onRequestQuote
 }) => {
-  const candidateStones = [
-    marbleProducts[0], // Calacatta Borghini
-    marbleProducts[1], // Statuario Venato
-    quartziteOnyxProducts[0], // Patagonia Quartzite
-    quartziteOnyxProducts[3], // Blue Roma
-    marbleProducts[2], // Nero Portoro
-    marbleProducts[4], // Verde Alpi
-    quartziteOnyxProducts[2], // Onice Verde
-  ].filter(Boolean);
-
-  const [selectedStone, setSelectedStone] = useState<StoneProduct>(candidateStones[0]);
+  const candidateStones = (marbleProducts.slice(0, 4).concat(quartziteOnyxProducts.slice(0, 4))).filter(Boolean);
+  const [selectedStone, setSelectedStone] = useState<StoneProduct>(candidateStones[0] || marbleProducts[0] || quartziteOnyxProducts[0]);
   const [bookmatchMode, setBookmatchMode] = useState<'single' | 'vertical_2x' | 'horizontal_2x' | 'diamond_4x'>('vertical_2x');
   const [lightingMode, setLightingMode] = useState<'gallery_4000k' | 'warm_2700k' | 'backlit_led'>('gallery_4000k');
   const [zoomLevel, setZoomLevel] = useState<number>(1);

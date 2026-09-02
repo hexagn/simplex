@@ -82,5 +82,6 @@ export function getProductBySlug(slug: string): StoneProduct | undefined {
 }
 
 export function getFeaturedProducts(): StoneProduct[] {
-  return allProducts.filter(p => p.featured);
+  const featured = allProducts.filter(p => p.featured);
+  return featured.length > 0 ? featured : allProducts.slice(0, 8);
 }

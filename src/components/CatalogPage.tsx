@@ -222,7 +222,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
                 : 'bg-[#FFFFFF] text-[#5C574F] hover:bg-[#EAE7DF] border border-[#DCD9D1]'
             }`}
           >
-            Italian Marble (50)
+            Italian Marble 
           </button>
           <button
             onClick={() => setSelectedCategory('granite')}
@@ -232,7 +232,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
                 : 'bg-[#FFFFFF] text-[#5C574F] hover:bg-[#EAE7DF] border border-[#DCD9D1]'
             }`}
           >
-            Exotic Granite (50)
+            Exotic Granite
           </button>
           <button
             onClick={() => setSelectedCategory('tiles')}
@@ -252,7 +252,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
                 : 'bg-[#FFFFFF] text-[#5C574F] hover:bg-[#EAE7DF] border border-[#DCD9D1]'
             }`}
           >
-            Quartzite & Onyx (50)
+            Quartzite & Onyx 
           </button>
         </div>
 
