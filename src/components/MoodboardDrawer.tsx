@@ -108,7 +108,7 @@ export const MoodboardDrawer: React.FC<MoodboardDrawerProps> = ({
                 </p>
               </div>
             ) : (
-              moodboard.map((item) => (
+              moodboard.filter(item => item && item.stone && item.stone.id).map((item) => (
                 <div
                   key={item.stone.id}
                   className="p-4 rounded-2xl bg-[#F8F7F4] border border-[#DCD9D1] space-y-3 relative group shadow-xs"
@@ -188,7 +188,7 @@ export const MoodboardDrawer: React.FC<MoodboardDrawerProps> = ({
               
               <div className="flex items-center justify-between text-xs">
                 <span className="text-[#7D776E]">Total Curated Stones:</span>
-                <span className="font-semibold text-[#1A1A1A]">{moodboard.length} Varieties</span>
+                <span className="font-semibold text-[#1A1A1A]">{moodboard.filter(m => m && m.stone).length} Varieties</span>
               </div>
               <div className="flex items-center justify-between text-xs">
                 <span className="text-[#7D776E]">Estimated Total Surface:</span>
@@ -197,7 +197,7 @@ export const MoodboardDrawer: React.FC<MoodboardDrawerProps> = ({
 
               <div className="space-y-2 pt-2">
                 <button
-                  onClick={() => onSubmitTradeInquiry(moodboard.map(m => m.stone))}
+                  onClick={() => onSubmitTradeInquiry(moodboard.filter(m => m && m.stone).map(m => m.stone))}
                   className="w-full py-3.5 rounded-xl bg-[#1A1A1A] hover:bg-[#33302B] text-white text-xs font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
                 >
                   <Send className="w-4 h-4" />

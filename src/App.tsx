@@ -31,26 +31,37 @@ export function App() {
     try {
       const saved = localStorage.getItem('simplex_moodboard');
       if (saved) {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          const valid = parsed.filter(item => item && item.stone && item.stone.id);
+          if (valid.length > 0) {
+            return valid;
+          }
+        }
       }
     } catch (e) {
       console.error(e);
     }
     // Default initial curated selections
-    return [
-      {
+    const defaultInitial: MoodboardItem[] = [];
+    if (allProducts[0]) {
+      defaultInitial.push({
         stone: allProducts[0], // Calacatta Borghini
         quantitySqFt: 650,
         allocatedRoom: 'Master Bathroom & Vanities',
         notes: 'Requested 2x Bookmatched sequential slabs for master shower feature wall.'
-      },
-      {
-        stone: allProducts[150], // Patagonia Quartzite
+      });
+    }
+    const patagonia = allProducts.find(p => p.name.toLowerCase().includes('patagonia')) || allProducts[1];
+    if (patagonia) {
+      defaultInitial.push({
+        stone: patagonia,
         quantitySqFt: 380,
         allocatedRoom: 'Gourmet Waterfall Island',
         notes: 'LED backlight sub-assembly for translucent crystal zone.'
-      }
-    ];
+      });
+    }
+    return defaultInitial;
   });
 
   const [isMoodboardOpen, setIsMoodboardOpen] = useState(false);
@@ -67,7 +78,8 @@ export function App() {
   // Persist moodboard to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('simplex_moodboard', JSON.stringify(moodboard));
+      const cleanMoodboard = moodboard.filter(item => item && item.stone && item.stone.id);
+      localStorage.setItem('simplex_moodboard', JSON.stringify(cleanMoodboard));
     } catch (e) {
       console.error(e);
     }
@@ -81,13 +93,13 @@ export function App() {
   // Moodboard actions
   const handleAddToMoodboard = (product: StoneProduct) => {
     setMoodboard((prev) => {
-      const exists = prev.find(item => item.stone.id === product.id);
+      const exists = prev.find(item => item?.stone?.id === product.id);
       if (exists) {
         // Toggle remove if already in moodboard
-        return prev.filter(item => item.stone.id !== product.id);
+        return prev.filter(item => item?.stone?.id !== product.id);
       }
       return [
-        ...prev,
+        ...prev.filter(item => item?.stone?.id),
         {
           stone: product,
           quantitySqFt: 500,
@@ -98,12 +110,12 @@ export function App() {
   };
 
   const handleRemoveFromMoodboard = (stoneId: string) => {
-    setMoodboard(prev => prev.filter(item => item.stone.id !== stoneId));
+    setMoodboard(prev => prev.filter(item => item?.stone?.id && item.stone.id !== stoneId));
   };
 
   const handleUpdateMoodboardItem = (stoneId: string, updates: Partial<MoodboardItem>) => {
     setMoodboard(prev => prev.map(item => {
-      if (item.stone.id === stoneId) {
+      if (item?.stone?.id === stoneId) {
         return { ...item, ...updates };
       }
       return item;
@@ -188,7 +200,9 @@ export function App() {
       <Navbar
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        moodboardCount={moodboard.length}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+        moodboardCount={moodboard.filter(m => m?.stone?.id).length}
         onOpenMoodboard={() => setIsMoodboardOpen(true)}
         onOpenCompare={() => setIsCompareModalOpen(true)}
         comparisonCount={comparisonStones.length}
@@ -345,9 +359,20 @@ export function App() {
             onAddToMoodboard={handleAddToMoodboard}
             onToggleCompare={handleToggleCompare}
             comparisonStones={comparisonStones}
-            moodboardIds={moodboard.map(m => m.stone.id)}
+            moodboardIds={moodboard.filter(m => m?.stone?.id).map(m => m.stone.id)}
             onRequestSample={handleRequestSample}
           />
+        )}
+
+        {/* ATELIER / VISUALIZER PAGE */}
+        {currentPage === 'visualizer' && (
+          <div className="py-6 bg-[#F8F7F4] min-h-screen">
+            <InteractiveVisualizerSection
+              onSelectProduct={(product) => setActiveModalProduct(product)}
+              onAddToMoodboard={handleAddToMoodboard}
+              onRequestQuote={handleRequestQuote}
+            />
+          </div>
         )}
 
         {/* PROJECT GALLERY PAGE */}
@@ -400,7 +425,7 @@ export function App() {
         onRequestQuote={handleRequestQuote}
         onRequestSample={handleRequestSample}
         onSelectRelated={(product) => setActiveModalProduct(product)}
-        isSavedInMoodboard={activeModalProduct ? moodboard.some(m => m.stone.id === activeModalProduct.id) : false}
+        isSavedInMoodboard={activeModalProduct ? moodboard.some(m => m?.stone?.id === activeModalProduct.id) : false}
         isCompared={activeModalProduct ? comparisonStones.some(s => s.id === activeModalProduct.id) : false}
       />
 

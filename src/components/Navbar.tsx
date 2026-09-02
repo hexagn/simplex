@@ -56,6 +56,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const activeView = currentPage || currentView || 'home';
   const handleViewChange = (view: string) => {
+    if (view === 'catalog' && setSelectedCategory) {
+      setSelectedCategory('all');
+    }
     if (setCurrentPage) setCurrentPage(view);
     if (setCurrentView) setCurrentView(view);
     setMobileMenuOpen(false);
