@@ -13,15 +13,19 @@ import { StoneProduct } from '../types';
 import { getFeaturedProducts } from '../data/products';
 
 interface HeroSectionProps {
-  onExploreCatalog: (category?: string) => void;
-  onOpenVisualizer: () => void;
+  onExploreCatalog?: (category?: string) => void;
+  onExploreCollections?: () => void;
+  onOpenVisualizer?: () => void;
+  onBookConsultation?: () => void;
   onSelectProduct: (product: StoneProduct) => void;
-  onRequestSampleKit: () => void;
+  onRequestSampleKit?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onExploreCatalog,
+  onExploreCollections,
   onOpenVisualizer,
+  onBookConsultation,
   onSelectProduct,
   onRequestSampleKit
 }) => {
@@ -93,7 +97,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2"
             >
               <button
-                onClick={() => onExploreCatalog()}
+                onClick={() => onExploreCatalog ? onExploreCatalog() : onExploreCollections?.()}
                 className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#1A1A1A] hover:bg-[#33302B] text-white font-medium text-[11px] tracking-[0.2em] uppercase font-outfit flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 shadow-sm cursor-pointer"
               >
                 <span>View 200+ Slabs In Mumbai Yard</span>
