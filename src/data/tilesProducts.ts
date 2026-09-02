@@ -1,0 +1,173 @@
+import { StoneProduct } from '../types';
+import { getStoneImages } from './stoneImageBank';
+
+export const tilesProducts: StoneProduct[] = [
+  {
+    id: 'til-01',
+    name: 'Sintered Calacatta Luxe Maxima (1600×3200mm)',
+    italianName: 'Grès Porcellanato Effetto Calacatta',
+    slug: 'sintered-calacatta-luxe-maxima',
+    category: 'tiles',
+    categoryLabel: 'Large Format Sintered Slabs',
+    color: 'White & Calacatta',
+    texture: 'Bookmatched',
+    finishes: ['Silk Sintered', 'Polished (Mirror Lustre)', 'Honed (Matte Velvet)'],
+    rarity: 'Exotic Sintered',
+    originCountry: 'Italy',
+    originRegion: 'Sassuolo, Emilia-Romagna, Italy',
+    description: 'Ultra-compact sintered porcelain slab with continuous full-body veins. Engineered to withstand 1,200°C direct heat, UV rays, zero porosity, and scratch resistance.',
+    architecturalNotes: 'The premier material for seamless continuous floor-to-wall transitions, integrated induction cooktops, and ventilated high-rise facades.',
+    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85',
+    closeupImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=85',
+    applicationImage: 'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=1200&q=85',
+    roomType: 'Kitchen Island',
+    specs: {
+      density: '2,450 kg/m³',
+      waterAbsorption: '0.01%',
+      compressiveStrength: '280 MPa',
+      flexuralStrength: '52.0 MPa',
+      porosity: 'Zero Porosity (0.01%)',
+      quarryOrigin: 'Sassuolo Precision Kilns, Italy',
+      recommendedApplications: ['Seamless Bathrooms', 'Integrated Induction Islands', 'Ventilated Facades'],
+      availableThicknesses: ['6mm', '12mm', '20mm'],
+      availableFinishes: ['Silk Sintered', 'Polished (Mirror Lustre)', 'Honed (Matte Velvet)']
+    },
+    priceTier: '$$$$',
+    inStockSlabs: 85,
+    featured: true,
+    bookmatchCompatible: true
+  },
+  {
+    id: 'til-02',
+    name: 'Terrazzo Veneziano Palladiana',
+    italianName: 'Battuto Veneziano Artistico',
+    slug: 'terrazzo-veneziano-palladiana',
+    category: 'tiles',
+    categoryLabel: 'Artisanal Terrazzo',
+    color: 'White & Calacatta',
+    texture: 'Fossilized',
+    finishes: ['Honed (Matte Velvet)', 'Polished (Mirror Lustre)'],
+    rarity: 'Signature Selection',
+    originCountry: 'Italy',
+    originRegion: 'Veneto, Italy',
+    description: 'Heritage Venetian mosaic composite featuring oversized hand-selected marble chips (Carrara, Rosso Verona, and Verde Alpi) suspended in a calcitic matrix.',
+    architecturalNotes: 'A timeless staple for luxury fashion flagship boutiques, hotel lobbies, and modernist Mediterranean residences.',
+    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85',
+    closeupImage: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=85',
+    applicationImage: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=85',
+    roomType: 'Executive Lobby',
+    specs: {
+      density: '2,580 kg/m³',
+      waterAbsorption: '0.25%',
+      compressiveStrength: '110 MPa',
+      flexuralStrength: '14.0 MPa',
+      porosity: 'Low',
+      quarryOrigin: 'Veneto Atelier, Italy',
+      recommendedApplications: ['Retail Boutiques', 'Restaurant Floors', 'Sunrooms'],
+      availableThicknesses: ['15mm', '20mm', '30mm'],
+      availableFinishes: ['Honed (Matte Velvet)', 'Polished (Mirror Lustre)']
+    },
+    priceTier: '$$$',
+    inStockSlabs: 60,
+    featured: true,
+    bookmatchCompatible: false
+  },
+  {
+    id: 'til-03',
+    name: 'Basaltina Lava Stone Fluted Tile',
+    italianName: 'Pietra Lavica Rigata',
+    slug: 'basaltina-lava-stone-fluted',
+    category: 'tiles',
+    categoryLabel: 'Architectural Relief Tiles',
+    color: 'Grey & Anthracite',
+    texture: 'Linear & Striated',
+    finishes: ['Fluted (Ribbed 3D)', 'Bush-Hammered (Raw Architectural)', 'Honed (Matte Velvet)'],
+    rarity: 'Signature Selection',
+    originCountry: 'Italy',
+    originRegion: 'Bagnoregio, Viterbo, Italy',
+    description: 'Natural volcanic basalt with precision 3D CNC fluted flutes. Creates dynamic shadow play and acoustic softening on vertical surfaces.',
+    architecturalNotes: 'Preferred by minimalist architects for hotel reception desks, spa hydrotherapy enclosures, and dramatic entry portals.',
+    image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85',
+    closeupImage: 'https://images.unsplash.com/photo-1615876234886-fd9a39fa97f6?auto=format&fit=crop&w=800&q=85',
+    applicationImage: 'https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?auto=format&fit=crop&w=1200&q=85',
+    roomType: 'Bathroom',
+    specs: {
+      density: '2,800 kg/m³',
+      waterAbsorption: '0.40%',
+      compressiveStrength: '160 MPa',
+      flexuralStrength: '18.0 MPa',
+      porosity: 'Low',
+      quarryOrigin: 'Viterbo Volcanic Basin, Italy',
+      recommendedApplications: ['3D Acoustic Walls', 'Spa Wet Rooms', 'Showcase Backdrops'],
+      availableThicknesses: ['15mm', '20mm', '30mm'],
+      availableFinishes: ['Fluted (Ribbed 3D)', 'Bush-Hammered (Raw Architectural)', 'Honed (Matte Velvet)']
+    },
+    priceTier: '$$$$',
+    inStockSlabs: 45,
+    featured: true,
+    bookmatchCompatible: false
+  }
+];
+
+const extraTilesData = [
+  { name: 'Sintered Nero Marquina Matt', color: 'Black & Nero', texture: 'Dramatic Veined', country: 'Spain', region: 'Castellón' },
+  { name: 'Ceppo di Gré Porcelain Slab', color: 'Grey & Anthracite', texture: 'Fossilized', country: 'Italy', region: 'Modena' },
+  { name: 'Travertine Navona Sintered Surface', color: 'Beige & Travertine', texture: 'Linear & Striated', country: 'Italy', region: 'Fiorano' },
+  { name: 'Emerald Onyx Sintered Glass', color: 'Emerald & Green', texture: 'Crystalline', country: 'Italy', region: 'Sassuolo' },
+  { name: 'Artisan Zellige Glazed Chalk', color: 'White & Calacatta', texture: 'Clouded & Soft', country: 'Morocco', region: 'Fez' },
+  { name: 'Artisan Zellige Noir Midnight', color: 'Black & Nero', texture: 'Clouded & Soft', country: 'Morocco', region: 'Fez' },
+  { name: 'Terrazzo Rosa Veneto', color: 'Rose & Burgundy', texture: 'Fossilized', country: 'Italy', region: 'Verona' },
+  { name: 'Terrazzo Verde Cipollino', color: 'Emerald & Green', texture: 'Fossilized', country: 'Italy', region: 'Treviso' },
+  { name: 'Corten Steel Effect Sintered Slab', color: 'Rose & Burgundy', texture: 'Dramatic Veined', country: 'Spain', region: 'Valencia' },
+  { name: 'Pure Anthracite Fluted Ceramic', color: 'Black & Nero', texture: 'Linear & Striated', country: 'Japan', region: 'Tajimi' },
+  { name: 'Sintered Statuario Gold XL', color: 'White & Calacatta', texture: 'Bookmatched', country: 'Italy', region: 'Bologna' },
+  { name: 'Limestone Jura Beige Tile', color: 'Beige & Travertine', texture: 'Fossilized', country: 'Germany', region: 'Bavaria' },
+  { name: 'Pietra Serena Sintered Module', color: 'Grey & Anthracite', texture: 'Clouded & Soft', country: 'Italy', region: 'Florence' },
+  { name: 'Artisan Terracotta Handmade Cotto', color: 'Rose & Burgundy', texture: 'Clouded & Soft', country: 'Italy', region: 'Impruneta' },
+  { name: 'Sintered Sahara Noir Gold', color: 'Black & Nero', texture: 'Dramatic Veined', country: 'Spain', region: 'Castellón' },
+  { name: 'Micro-Terrazzo Bianco Carrara', color: 'White & Calacatta', texture: 'Speckled & Granular', country: 'Italy', region: 'Vicenza' },
+  { name: 'Linear Scored Travertine Tile', color: 'Beige & Travertine', texture: 'Linear & Striated', country: 'Italy', region: 'Tivoli' },
+  { name: 'Sintered Patagonia Lux 20mm', color: 'Gold & Amber', texture: 'Crystalline', country: 'Italy', region: 'Sassuolo' },
+  { name: 'Chevron Calacatta Mosaic Planks', color: 'White & Calacatta', texture: 'Dramatic Veined', country: 'Italy', region: 'Massa' },
+  { name: 'Hexagonal Nero Basalt Tile', color: 'Black & Nero', texture: 'Speckled & Granular', country: 'Italy', region: 'Sicily' }
+];
+
+extraTilesData.forEach((item, idx) => {
+  const num = idx + 4;
+  const id = `til-${num < 10 ? '0' + num : num}`;
+  const imgSet = getStoneImages(item.name, item.color, idx);
+  tilesProducts.push({
+    id,
+    name: item.name,
+    italianName: `Superficie ${item.name}`,
+    slug: item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+    category: 'tiles',
+    categoryLabel: 'Architectural Tiles & Sintered Slabs',
+    color: item.color as any,
+    texture: item.texture as any,
+    finishes: ['Silk Sintered', 'Honed (Matte Velvet)', 'Fluted (Ribbed 3D)'],
+    rarity: idx % 3 === 0 ? 'Exotic Sintered' : idx % 2 === 0 ? 'Signature Selection' : 'Heritage Classic',
+    originCountry: item.country,
+    originRegion: item.region,
+    description: `Engineered large-format surface offering precision calibration, zero porosity, and supreme stain resilience crafted in ${item.country}.`,
+    architecturalNotes: `Ideal for continuous shower enclosures, spa facilities, floor-to-ceiling modular cladding, and high-heat induction counter surfaces.`,
+    image: imgSet.slab,
+    closeupImage: imgSet.closeup,
+    applicationImage: imgSet.application,
+    roomType: idx % 3 === 0 ? 'Bathroom' : idx % 3 === 1 ? 'Kitchen Island' : 'Facade',
+    specs: {
+      density: '2,460 kg/m³',
+      waterAbsorption: '0.01%',
+      compressiveStrength: '275 MPa',
+      flexuralStrength: '50.0 MPa',
+      porosity: 'Non-porous',
+      quarryOrigin: `${item.region}, ${item.country}`,
+      recommendedApplications: ['Large Format Flooring', 'Bathroom Envelopes', 'Architectural Facades'],
+      availableThicknesses: ['6mm', '12mm', '20mm'],
+      availableFinishes: ['Silk Sintered', 'Honed (Matte Velvet)', 'Fluted (Ribbed 3D)']
+    },
+    priceTier: idx % 3 === 0 ? '$$$$' : '$$$',
+    inStockSlabs: 50 + (idx * 5) % 100,
+    bookmatchCompatible: item.texture === 'Bookmatched' || item.texture === 'Dramatic Veined'
+  });
+});

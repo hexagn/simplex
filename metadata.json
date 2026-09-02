@@ -1,0 +1,6 @@
+{
+  "name": "Simplex - Luxury Marble, Granite & Architectural Surfaces (Mumbai)",
+  "description": "Mumbai's premier natural stone atelier and master stockyard. Exclusive purveyor of imported Italian marble, exotic granites, Brazilian quartzite, and Indian heritage stones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
