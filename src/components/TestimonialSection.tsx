@@ -317,46 +317,6 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
           </motion.div>
         </AnimatePresence>
 
-        {/* Secondary Testimonial Grid Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          {testimonials.map((t, idx) => (
-            <div
-              key={t.id}
-              onClick={() => setCurrentIndex(idx)}
-              className={`p-6 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between space-y-4 ${
-                currentIndex === idx
-                  ? 'bg-[#FFFFFF] border-[#8F704D] shadow-md ring-1 ring-[#8F704D]'
-                  : 'bg-[#FFFFFF]/70 hover:bg-[#FFFFFF] border-[#DCD9D1] shadow-xs'
-              }`}
-            >
-              <div className="space-y-2">
-                <div className="flex items-center justify-between text-xs">
-                  <div className="flex items-center text-[#8F704D]">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 fill-[#8F704D]" />
-                    ))}
-                  </div>
-                  <span className="text-[10px] text-[#7D776E] font-mono">{t.year.split(' ')[0]}</span>
-                </div>
-
-                <p className="text-xs text-[#4A463F] line-clamp-3 font-light leading-relaxed">
-                  "{t.quote}"
-                </p>
-              </div>
-
-              <div className="pt-3 border-t border-[#EAE7DF] flex items-center justify-between">
-                <div>
-                  <div className="font-cinzel text-xs font-bold text-[#1A1A1A]">{t.clientName}</div>
-                  <div className="text-[10px] text-[#7D776E] truncate max-w-[180px]">{t.firm}</div>
-                </div>
-                <span className={`text-[11px] font-semibold ${currentIndex === idx ? 'text-[#8F704D]' : 'text-[#A0988A]'}`}>
-                  {currentIndex === idx ? 'Viewing' : 'Inspect →'}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
       </div>
     </section>
   );

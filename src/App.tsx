@@ -396,7 +396,7 @@ export function App() {
                     }}
                     className="px-6 py-3 rounded-full bg-[#FFFFFF] hover:bg-[#F8F7F4] text-[#1A1A1A] border border-[#DCD9D1] text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-xs inline-flex items-center"
                   >
-                    View All 200 Curated Slabs →
+                    View All {allProducts.length} Curated Slabs →
                   </a>
                 </div>
 

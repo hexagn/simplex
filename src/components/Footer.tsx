@@ -9,6 +9,7 @@ import {
   Check, 
   Send 
 } from 'lucide-react';
+import { allProducts } from '../data/products';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -169,7 +170,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
                   }}
                   className="hover:text-[#C5A880] transition-colors cursor-pointer text-[#C5A880] font-medium block"
                 >
-                  View Complete 200 Slab Catalog →
+                  View Complete {allProducts.length} Slab Catalog →
                 </a>
               </li>
             </ul>

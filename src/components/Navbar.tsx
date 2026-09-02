@@ -93,11 +93,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   // Simplified and smaller menu items for high-end luxury feel
   const navLinks = [
-    { label: 'Collection', view: 'catalog', code: '01', href: '/catalog' },
-    { label: 'Atelier', view: 'visualizer', code: '02', href: '/visualizer' },
+    { label: 'Collection', view: 'catalog', code: '01', href: '/collection' },
+    { label: 'Atelier', view: 'visualizer', code: '02', href: '/atelier' },
     { label: 'Projects', view: 'projects', code: '03', href: '/projects' },
-    { label: 'Heritage', view: 'about', code: '04', href: '/about' },
-    { label: 'Journal', view: 'blogs', code: '05', href: '/blogs' },
+    { label: 'Heritage', view: 'about', code: '04', href: '/heritage' },
+    { label: 'Journal', view: 'blogs', code: '05', href: '/journal' },
     { label: 'Contact', view: 'contact', code: '06', href: '/contact' },
   ];
 
@@ -156,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="w-1.5 h-1.5 rounded-full bg-[#8F704D]"></span>
               </div>
               <span className="text-[8px] tracking-[0.35em] uppercase text-[#8C8579] font-medium font-outfit pl-0.5">
-                marble • separator • granite • tiles
+                marble • granite • tiles
               </span>
             </a>
 

@@ -9,7 +9,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '7 min read',
     date: 'August 24, 2025',
     category: 'Architectural Spec Guide',
-    coverImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
+    coverImage: 'https://cdn.shopify.com/s/files/1/0423/9520/5787/products/imported-marble-statuario-extra-elegant-marbles-ltd-31821588496539.jpg?v=1627982366',
     author: {
       name: 'Dr. Leonardo Castiglioni & Aarav Merchant',
       role: 'Chief Geologist & Mumbai Atelier Director, Simplex',
@@ -35,7 +35,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '6 min read',
     date: 'July 18, 2025',
     category: 'Material Science',
-    coverImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85',
+    coverImage: 'https://cdn.shopify.com/s/files/1/0423/9520/5787/products/imported-marble-van-gogh-elegant-marbles-ltd-20685932986523.jpg?v=1622800603',
     author: {
       name: 'Camilla Valenti',
       role: 'Director of Architectural Finishes',
@@ -61,7 +61,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min read',
     date: 'June 05, 2025',
     category: 'Engineering & Lighting',
-    coverImage: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85',
+    coverImage: 'https://cdn.shopify.com/s/files/1/0423/9520/5787/products/onyx-onyx-aurora-green-onyx-elegant-marbles-ltd-18195692683419.jpg?v=1622667505',
     author: {
       name: 'Gianluca Rossi',
       role: 'Senior Project Engineering Lead',

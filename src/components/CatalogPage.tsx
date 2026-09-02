@@ -188,7 +188,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
               <p className="text-[#5C574F] text-sm sm:text-base font-light mt-2 max-w-2xl leading-relaxed">
                 {currentCategoryInfo
                   ? currentCategoryInfo.description
-                  : 'Explore 200 consecutive quarried slabs across Italian marble, structural granite, sintered architectural porcelain, and exotic quartzites.'}
+                  : `Explore ${allProducts.length} consecutive quarried slabs across Italian marble, structural granite, sintered architectural porcelain, and exotic quartzites.`}
               </p>
             </div>
 
@@ -212,7 +212,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
                 : 'bg-[#FFFFFF] text-[#5C574F] hover:bg-[#EAE7DF] border border-[#DCD9D1]'
             }`}
           >
-            All Collections (200)
+            All Collections ({allProducts.length})
           </button>
           <button
             onClick={() => setSelectedCategory('marble')}
@@ -222,7 +222,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
                 : 'bg-[#FFFFFF] text-[#5C574F] hover:bg-[#EAE7DF] border border-[#DCD9D1]'
             }`}
           >
-            Italian Marble 
+            Italian Marble ({categoryMeta.marble.count})
           </button>
           <button
             onClick={() => setSelectedCategory('granite')}
@@ -232,7 +232,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
                 : 'bg-[#FFFFFF] text-[#5C574F] hover:bg-[#EAE7DF] border border-[#DCD9D1]'
             }`}
           >
-            Exotic Granite
+            Exotic Granite ({categoryMeta.granite.count})
           </button>
           <button
             onClick={() => setSelectedCategory('tiles')}
@@ -242,7 +242,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
                 : 'bg-[#FFFFFF] text-[#5C574F] hover:bg-[#EAE7DF] border border-[#DCD9D1]'
             }`}
           >
-            Sintered & Tiles (50)
+            Architectural Tiles ({categoryMeta.tiles.count})
           </button>
           <button
             onClick={() => setSelectedCategory('quartzite_onyx')}
@@ -252,7 +252,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
                 : 'bg-[#FFFFFF] text-[#5C574F] hover:bg-[#EAE7DF] border border-[#DCD9D1]'
             }`}
           >
-            Quartzite & Onyx 
+            Quartzite & Onyx ({categoryMeta.quartzite_onyx.count})
           </button>
         </div>
 

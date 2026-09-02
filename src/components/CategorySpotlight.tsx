@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowUpRight, Sparkles, Gem, Box, Flame } from 'lucide-react';
+import { categoryMeta } from '../data/products';
 
 interface CategorySpotlightProps {
   onSelectCategory: (category: 'marble' | 'granite' | 'tiles' | 'quartzite_onyx') => void;
@@ -12,7 +13,7 @@ export const CategorySpotlight: React.FC<CategorySpotlightProps> = ({ onSelectCa
       key: 'marble' as const,
       title: 'Italian & Global Marble',
       subtitle: 'Calacatta, Statuario, Portoro & Rare European Metamorphic Slabs',
-      count: '50 Curated Slabs',
+      count: `${categoryMeta.marble.count} Curated Slabs`,
       icon: Gem,
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
       highlights: ['Calacatta Borghini', 'Statuario Extra', 'Nero Portoro Gold', 'Arabescato Corchia'],
@@ -22,7 +23,7 @@ export const CategorySpotlight: React.FC<CategorySpotlightProps> = ({ onSelectCa
       key: 'granite' as const,
       title: 'Exotic & Structural Granite',
       subtitle: 'High-Density Magmatic Formations with Extreme Scratch & Thermal Resilience',
-      count: '50 Curated Slabs',
+      count: `${categoryMeta.granite.count} Curated Slabs`,
       icon: Flame,
       image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85',
       highlights: ['Blue Bahia Imperial', 'Cosmic Black Gold', 'Lemurian Blue Labradorite', 'Nero Zimbabwe'],
@@ -32,7 +33,7 @@ export const CategorySpotlight: React.FC<CategorySpotlightProps> = ({ onSelectCa
       key: 'tiles' as const,
       title: 'Architectural Tiles & Sintered Slabs',
       subtitle: 'Large-Format Maxima Slabs (1600×3200mm), Terrazzo & Fluted 3D Reliefs',
-      count: '50 Curated Slabs',
+      count: `${categoryMeta.tiles.count} Curated Slabs`,
       icon: Box,
       image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85',
       highlights: ['Sintered Calacatta Luxe', 'Terrazzo Veneziano', 'Basaltina Fluted 3D', 'Artisan Zellige'],
@@ -42,7 +43,7 @@ export const CategorySpotlight: React.FC<CategorySpotlightProps> = ({ onSelectCa
       key: 'quartzite_onyx' as const,
       title: 'Exotic Quartzite & Translucent Onyx',
       subtitle: 'Gemological Natural Formations with High Translucency & Diamond Hardness',
-      count: '50 Curated Slabs',
+      count: `${categoryMeta.quartzite_onyx.count} Curated Slabs`,
       icon: Sparkles,
       image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85',
       highlights: ['Patagonia Translucent', 'Taj Mahal Royale', 'Onice Verde Esmeralda', 'Blue Roma'],

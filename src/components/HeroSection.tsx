@@ -120,7 +120,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 }}
                 className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#1A1A1A] hover:bg-[#33302B] text-white font-medium text-[11px] tracking-[0.2em] uppercase font-outfit flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 shadow-sm cursor-pointer"
               >
-                <span>View 200+ Slabs In Mumbai Yard</span>
+                <span>View {allProducts.length}+ Slabs In Mumbai Yard</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
 
