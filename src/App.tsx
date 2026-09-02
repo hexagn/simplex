@@ -8,6 +8,8 @@ import { ProjectGalleryPage } from './components/ProjectGalleryPage';
 import { AboutPage } from './components/AboutPage';
 import { BlogsPage } from './components/BlogsPage';
 import { ContactPage } from './components/ContactPage';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { TermsConditionsPage } from './components/TermsConditionsPage';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { MoodboardDrawer } from './components/MoodboardDrawer';
 import { StoneComparisonModal } from './components/StoneComparisonModal';
@@ -43,6 +45,10 @@ function parseUrlLocation(): { page: string; category: string; stoneId?: string;
       page = 'blogs';
     } else if (['contact', 'inquire', 'consultation'].includes(target)) {
       page = 'contact';
+    } else if (['privacy-policy', 'privacy'].includes(target)) {
+      page = 'privacy-policy';
+    } else if (['terms-and-conditions', 'terms', 'terms-conditions'].includes(target)) {
+      page = 'terms-and-conditions';
     }
 
     const category = searchParams.get('category') || 'all';
@@ -540,6 +546,20 @@ export function App() {
             prefilledStone={prefilledStoneForQuote}
             prefilledStones={prefilledStonesForQuote}
             prefilledTopic={prefilledTopicForContact}
+          />
+        )}
+
+        {/* PRIVACY POLICY PAGE */}
+        {currentPage === 'privacy-policy' && (
+          <PrivacyPolicyPage
+            onNavigate={(page) => handleNavigate(page, 'all')}
+          />
+        )}
+
+        {/* TERMS & CONDITIONS PAGE */}
+        {currentPage === 'terms-and-conditions' && (
+          <TermsConditionsPage
+            onNavigate={(page) => handleNavigate(page, 'all')}
           />
         )}
 

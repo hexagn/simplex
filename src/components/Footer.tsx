@@ -267,9 +267,27 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="hover:text-[#C5A880] cursor-pointer">GST Invoicing Terms</span>
-            <span className="hover:text-[#C5A880] cursor-pointer">Architectural Sample Protocol</span>
-            <span className="hover:text-[#C5A880] cursor-pointer">IS 1121 & CE Stone Compliance</span>
+            <a
+              href="/privacy-policy"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('privacy-policy');
+              }}
+              className="hover:text-[#C5A880] transition-colors cursor-pointer"
+            >
+              Privacy Policy
+            </a>
+            <span className="text-[#4A453C]">•</span>
+            <a
+              href="/terms-and-conditions"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('terms-and-conditions');
+              }}
+              className="hover:text-[#C5A880] transition-colors cursor-pointer"
+            >
+              Terms & Conditions
+            </a>
           </div>
         </div>
 

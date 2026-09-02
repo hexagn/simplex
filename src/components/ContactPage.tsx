@@ -9,7 +9,6 @@ import {
   Building2, 
   Clock, 
   Sparkles, 
-  Upload, 
   FileText,
   ShieldCheck
 } from 'lucide-react';
@@ -46,7 +45,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [inquiryRefId, setInquiryRefId] = useState('');
-  const [attachedFileName, setAttachedFileName] = useState('');
 
   useEffect(() => {
     if (prefilledStone) {
@@ -77,12 +75,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({
       setIsSubmitting(false);
       setIsSubmitted(true);
     }, 1200);
-  };
-
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setAttachedFileName(e.target.files[0].name);
-    }
   };
 
   return (
@@ -205,7 +197,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 </div>
 
                 <button
-                  onClick={() => { setIsSubmitted(false); setAttachedFileName(''); }}
+                  onClick={() => setIsSubmitted(false)}
                   className="px-8 py-3 rounded-full bg-[#1A1A1A] hover:bg-[#33302B] text-white text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-xs"
                 >
                   Submit Another Project Inquiry
@@ -321,42 +313,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   </div>
                 </div>
 
-                {/* Row 4: Volume & Target Stone */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div className="space-y-1.5">
-                    <label className="text-xs text-[#1A1A1A] uppercase tracking-wider font-semibold">
-                      Estimated Surface Area (Sq.Ft)
-                    </label>
-                    <select
-                      value={formData.estimatedSqFt}
-                      onChange={(e) => setFormData({ ...formData, estimatedSqFt: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#F8F7F4] border border-[#DCD9D1] text-xs text-[#1A1A1A] focus:outline-none focus:border-[#8F704D]"
-                    >
-                      <option value="Under 500 sq.ft">Under 500 sq.ft (Single Feature / Vanity)</option>
-                      <option value="500 - 2,000 sq.ft">500 - 2,000 sq.ft (Villa Suite / Island)</option>
-                      <option value="2,000 - 10,000 sq.ft">2,000 - 10,000 sq.ft (Full Estate / Residence)</option>
-                      <option value="Over 10,000 sq.ft">Over 10,000 sq.ft (Commercial / Hotel Volume)</option>
-                    </select>
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <label className="text-xs text-[#1A1A1A] uppercase tracking-wider font-semibold">
-                      Target Stone Name(s) / Color
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.specificStone}
-                      onChange={(e) => setFormData({ ...formData, specificStone: e.target.value })}
-                      placeholder="e.g. Calacatta Borghini, Patagonia Quartzite"
-                      className="w-full px-4 py-3 rounded-xl bg-[#F8F7F4] border border-[#DCD9D1] text-xs text-[#1A1A1A] placeholder-[#8A847A] focus:outline-none focus:border-[#8F704D]"
-                    />
-                  </div>
-                </div>
-
                 {/* Message */}
                 <div className="space-y-1.5">
                   <label className="text-xs text-[#1A1A1A] uppercase tracking-wider font-semibold">
-                    Architectural Brief / Project Requirements
+                    Project Requirements
                   </label>
                   <textarea
                     rows={4}
@@ -365,57 +325,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     placeholder="Provide details on bookmatch preferences, finish types (Honed/Polished), edge profiles, or specific quarry origins..."
                     className="w-full px-4 py-3 rounded-xl bg-[#F8F7F4] border border-[#DCD9D1] text-xs text-[#1A1A1A] placeholder-[#8A847A] focus:outline-none focus:border-[#8F704D]"
                   />
-                </div>
-
-                {/* File Attachment Upload Simulator */}
-                <div className="p-4 rounded-xl bg-[#F8F7F4] border border-dashed border-[#DCD9D1] flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <Upload className="w-5 h-5 text-[#8F704D]" />
-                    <div className="text-xs">
-                      <span className="text-[#1A1A1A] font-medium block">Attach Architectural Drawings / CAD / Schedules</span>
-                      <span className="text-[11px] text-[#7D776E]">PDF, DWG, DXF, or ZIP (Up to 50MB)</span>
-                    </div>
-                  </div>
-
-                  <label className="px-4 py-2 rounded-lg bg-[#FFFFFF] hover:bg-[#EAE7DF] border border-[#DCD9D1] text-xs text-[#1A1A1A] font-medium cursor-pointer transition-colors whitespace-nowrap shadow-xs">
-                    <span>{attachedFileName ? 'File Attached' : 'Select Files'}</span>
-                    <input type="file" onChange={handleFileUpload} className="hidden" />
-                  </label>
-                </div>
-                {attachedFileName && (
-                  <div className="text-xs text-emerald-600 font-medium flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>Attached: {attachedFileName}</span>
-                  </div>
-                )}
-
-                {/* Checkboxes: Sample kit & Atelier visit */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <label className="flex items-start gap-2.5 p-3.5 rounded-xl bg-[#F8F7F4] border border-[#DCD9D1] cursor-pointer hover:border-[#8F704D] transition-colors">
-                    <input
-                      type="checkbox"
-                      checked={formData.sampleKitRequested}
-                      onChange={(e) => setFormData({ ...formData, sampleKitRequested: e.target.checked })}
-                      className="accent-[#8F704D] w-4 h-4 rounded mt-0.5"
-                    />
-                    <div className="text-xs">
-                      <span className="text-[#1A1A1A] font-medium block">Courier 150×150mm Sample Box</span>
-                      <span className="text-[10px] text-[#7D776E]">Delivered within 48h to your design office</span>
-                    </div>
-                  </label>
-
-                  <label className="flex items-start gap-2.5 p-3.5 rounded-xl bg-[#F8F7F4] border border-[#DCD9D1] cursor-pointer hover:border-[#8F704D] transition-colors">
-                    <input
-                      type="checkbox"
-                      checked={formData.atelierVisitRequested}
-                      onChange={(e) => setFormData({ ...formData, atelierVisitRequested: e.target.checked })}
-                      className="accent-[#8F704D] w-4 h-4 rounded mt-0.5"
-                    />
-                    <div className="text-xs">
-                      <span className="text-[#1A1A1A] font-medium block">Book Private Atelier Viewing</span>
-                      <span className="text-[10px] text-[#7D776E]">Inspect actual gangsaw slabs under natural light</span>
-                    </div>
-                  </label>
                 </div>
 
                 {/* Submit CTA */}
