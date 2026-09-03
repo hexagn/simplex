@@ -94,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   // Simplified and smaller menu items for high-end luxury feel
   const navLinks = [
     { label: 'Collection', view: 'catalog', code: '01', href: '/collection' },
-    { label: 'Atelier', view: 'visualizer', code: '02', href: '/atelier' },
+    { label: 'Visualizer', view: 'visualizer', code: '02', href: '/visualizer' },
     { label: 'Projects', view: 'projects', code: '03', href: '/projects' },
     { label: 'About', view: 'about', code: '04', href: '/about' },
     { label: 'Journal', view: 'blogs', code: '05', href: '/journal' },
@@ -147,15 +147,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                 e.preventDefault();
                 handleViewChange('home');
               }}
-              className="group flex flex-col items-start text-left cursor-pointer focus:outline-none"
+              className="group flex flex-col items-center text-center cursor-pointer focus:outline-none"
             >
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center justify-center gap-1.5">
                 <span className="font-cinzel text-xl sm:text-2xl font-bold tracking-[0.3em] text-[#1A1A1A] group-hover:text-[#8F704D] transition-colors">
                   SIMPLEX
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#8F704D]"></span>
               </div>
-              <span className="text-[8px] tracking-[0.35em] uppercase text-[#8C8579] font-medium font-outfit pl-0.5">
+              <span className="text-[8px] tracking-[0.35em] uppercase text-[#8C8579] font-medium font-outfit">
                 marble • granite • tiles
               </span>
             </a>

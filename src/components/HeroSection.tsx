@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   ArrowRight, 
@@ -33,6 +33,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const featuredStones = featured.length > 0 ? featured.slice(0, 4) : allProducts.slice(0, 4);
   const [activeStoneIdx, setActiveStoneIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.defaultMuted = true;
+      videoRef.current.play().catch(() => {});
+    }
+  }, []);
 
   // Auto slide every 3 seconds
   useEffect(() => {
@@ -49,7 +58,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   if (!activeStone) return null;
 
   return (
-    <section className="relative min-h-[88vh] flex flex-col justify-center overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-20 border-b border-[#DCD9D1] bg-[#F8F7F4]">
+    <section className="relative min-h-[88vh] flex flex-col justify-center overflow-hidden pt-8 pb-6 lg:pt-14 lg:pb-8 border-b border-[#DCD9D1] bg-[#F8F7F4]">
+      {/* Background Marble & Tiles Architectural Video - Clearly Visible, No White Overlay */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <video
+          ref={videoRef}
+          src="/videos/marble-tiles-bg.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/banners/banner-2.jpg"
+          onLoadedMetadata={(e) => {
+            e.currentTarget.muted = true;
+            e.currentTarget.play().catch(() => {});
+          }}
+          className="w-full h-full object-cover"
+        />
+        {/* Subtle Delicate Overlay Layer */}
+        <div className="absolute inset-0 bg-[#F8F7F4]/25 backdrop-blur-[1px] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F8F7F4]/40 via-[#F8F7F4]/15 to-transparent pointer-events-none" />
+      </div>
+
       {/* Background Architectural Grid & Subtle Light Diffuse */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-radial from-[#8F704D]/6 via-transparent to-transparent blur-3xl"></div>

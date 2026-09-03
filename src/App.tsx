@@ -344,7 +344,7 @@ export function App() {
       />
 
       {/* Main Content View Switcher */}
-      <main className="pt-20">
+      <main className={currentPage === 'home' ? '' : 'pt-20'}>
         
         {/* HOMEPAGE */}
         {currentPage === 'home' && (

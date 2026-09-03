@@ -49,13 +49,13 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFFFFF] border border-[#DCD9D1] text-[#8F704D] text-[11px] font-semibold tracking-[0.2em] uppercase shadow-xs">
             <ShieldCheck className="w-3.5 h-3.5" />
-            Client Confidentiality & Data Governance
+            Client Confidentiality & Data Governance Charter
           </div>
           <h1 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#1A1A1A]">
-            Privacy Policy 
+            Privacy Policy & Trade Governance
           </h1>
           <p className="text-xs text-[#7D776E] tracking-wider uppercase font-mono">
-            Effective Date: March 2026 • Compliant with DPDP Act (India) & International Privacy Standards
+            Simplex Marble & Granite Pvt. Ltd. • Compliant with DPDP Act, 2023 (India) & IT Act, 2000
           </p>
         </div>
 
@@ -66,13 +66,13 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
           <section className="space-y-3">
             <h2 className="font-cinzel text-xl font-bold text-[#1A1A1A] flex items-center gap-2">
               <span className="text-[#8F704D] font-mono text-sm">01.</span>
-              Executive Commitment to Confidentiality
+              Executive Commitment to Client Confidentiality
             </h2>
             <p>
-              Simplex Marble & Architectural Surfaces Pvt. Ltd. ("Simplex", "we", "our", or "us") operates as a bespoke purveyor of imported Italian marble, structural granite, and rare gemological quartzites for discerning architects, developers, and private residential patrons across Mumbai and India.
+              Simplex Marble & Granite Private Limited (CIN: U14100MH1988PTC048912), incorporated under the Companies Act and having its registered corporate atelier at The Pavilion, Dr. Annie Besant Road, Worli, Mumbai 400018, Maharashtra, India ("Simplex", "Company", "we", "our", or "us"), operates as India's premier direct importer and stockist of curated Italian marble, exotic Brazilian quartzites, structural granite, and sintered architectural surfaces since 1988.
             </p>
             <p>
-              We treat client identities, architectural blueprints, site addresses, bill-of-quantities (BOQ), and custom slab specifications with extreme discretion and strict confidentiality.
+              This Privacy Policy governs how we safeguard patron identities, architectural blueprints, bill-of-quantities (BOQ), cutting schedules, site GPS coordinates, and commercial records collected through our digital atelier (simplexstone.in), private Worli showroom viewings, and inspections at our central JNPT logistics yard, in strict adherence to the Digital Personal Data Protection Act, 2023 (DPDP Act) and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011.
             </p>
           </section>
 
@@ -83,14 +83,14 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               Information We Collect
             </h2>
             <p>
-              When you interact with our digital atelier, request sample swatch boxes, visit our Worli Experience Center or Navi Mumbai Stockyard, or submit trade inquiries, we may collect:
+              When you interact with our digital atelier, request custom swatch boxes, visit our Worli Experience Center or Navi Mumbai Stockyard, or submit trade inquiries, we may collect:
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-[#5C574F]">
-              <li><strong>Contact Particulars:</strong> Full name, professional designation (Architect, Interior Designer, Estate Owner, PMC), firm name, phone number, and corporate email.</li>
-              <li><strong>Project Specifications:</strong> Site location city, estimated square footage, preferred stone varieties, bookmatching preferences, and target procurement timelines.</li>
-              <li><strong>Architectural CAD & Drawings:</strong> Floor layouts, elevations, or 3D visualizer renderings uploaded voluntarily for vein-matching simulations and yield optimization.</li>
-              <li><strong>Commercial & Invoicing Records:</strong> GST identification numbers (GSTIN), registered billing addresses, and corporate tax information necessary for 18% Input Tax Credit (ITC) tax invoicing.</li>
-              <li><strong>Digital Interaction Data:</strong> Slabs saved in your spec tray/moodboard, comparison sessions, lighting visualizer settings, and general browser analytics.</li>
+              <li><strong>Patron & Professional Credentials:</strong> Full legal name, Council of Architecture (COA) registration or IIID membership number (for architects and interior designers), architectural firm name, professional designation, WhatsApp business contact, verified email, and studio dispatch address.</li>
+              <li><strong>Project Specifications & Stone Schedules:</strong> Project site city, estimated square footage, preferred stone classifications (Italian Marble, Magmatic Granite, Translucent Quartzite), bookmatching pattern preferences, and target procurement and installation schedules.</li>
+              <li><strong>Architectural CAD & BIM Deliverables:</strong> AutoCAD (.dwg, .dxf), Revit (.rvt), SketchUp models, elevation schedules, or 3D visualizer renderings uploaded voluntarily for vein-continuity simulations, yield optimization, and CNC waterjet precision fabrication.</li>
+              <li><strong>Commercial & Statutory Invoicing Records:</strong> 15-digit Goods and Services Tax Identification Number (GSTIN), Permanent Account Number (PAN), registered billing entities, e-Way bill consignment data, and banking transaction references required for 18% Input Tax Credit (ITC) tax invoicing.</li>
+              <li><strong>Digital Atelier Interaction Telemetry:</strong> Slabs bookmarked in your Specification Tray, bookmatch comparison sessions, Kelvin lighting visualizer preferences (3000K Warm Alabaster to 6000K Daylight), and general browser performance telemetry.</li>
             </ul>
           </section>
 
@@ -101,24 +101,24 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               Purpose of Data Utilization
             </h2>
             <p>
-              We process personal and architectural project data strictly for legitimate trade and customer service purposes:
+              We process personal and architectural project data strictly for verified trade operations, order fulfillment, and patron service purposes:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div className="p-4 rounded-xl bg-[#F8F7F4] border border-[#DCD9D1]">
-                <div className="font-semibold text-[#1A1A1A] mb-1">Quarry Sourcing & Allocation</div>
-                <p className="text-xs text-[#7D776E]">Reserving consecutive gangsaw slab bundles at European and global quarries matching your project's chromatic consistency.</p>
+                <div className="font-semibold text-[#1A1A1A] mb-1">Global Quarry Allocation & Block Reservations</div>
+                <p className="text-xs text-[#7D776E]">Reserving consecutive gangsaw slab bundles at European and global partner quarries (Carrara, Verona, Espírito Santo) to preserve chromatic and textural continuity across your floorplate.</p>
               </div>
               <div className="p-4 rounded-xl bg-[#F8F7F4] border border-[#DCD9D1]">
-                <div className="font-semibold text-[#1A1A1A] mb-1">Pan-India Logistics & Delivery</div>
-                <p className="text-xs text-[#7D776E]">Coordinating dedicated heavy-payload crane transport from our JNPT stockyard directly to your residential or commercial site.</p>
+                <div className="font-semibold text-[#1A1A1A] mb-1">Pan-India Freight Logistics & Port Clearance</div>
+                <p className="text-xs text-[#7D776E]">Coordinating customs clearance at Nhava Sheva (JNPT), generating mandatory GST e-Way bills, and dispatching hydraulic crane-equipped flatbed trailers directly to your project site.</p>
               </div>
               <div className="p-4 rounded-xl bg-[#F8F7F4] border border-[#DCD9D1]">
-                <div className="font-semibold text-[#1A1A1A] mb-1">Sample Swatch Courier</div>
-                <p className="text-xs text-[#7D776E]">Dispatching customized 10×10cm calibrated stone swatches and specification monographs to your architecture studio.</p>
+                <div className="font-semibold text-[#1A1A1A] mb-1">Calibrated Swatch Courier & Provenance Dossiers</div>
+                <p className="text-xs text-[#7D776E]">Dispatching customized 10×10cm laser-cut stone swatches, compressive strength technical certificates, and quarry origin monographs via express courier to your architecture studio.</p>
               </div>
               <div className="p-4 rounded-xl bg-[#F8F7F4] border border-[#DCD9D1]">
-                <div className="font-semibold text-[#1A1A1A] mb-1">Private Atelier Appointments</div>
-                <p className="text-xs text-[#7D776E]">Scheduling exclusive gantry crane viewing slots and confidential material consultations at our Worli Pavilion.</p>
+                <div className="font-semibold text-[#1A1A1A] mb-1">Private Atelier & Stockyard Appointments</div>
+                <p className="text-xs text-[#7D776E]">Scheduling private material viewing slots at our Worli Flagship Pavilion or arranging escorted overhead gantry crane dry-lay inspections at our Navi Mumbai yard.</p>
               </div>
             </div>
           </section>
@@ -130,10 +130,13 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               Architectural Non-Disclosure & Blueprint Safety
             </h2>
             <p>
-              We honor formal Non-Disclosure Agreements (NDAs) executed with architectural firms and private estate owners. Blueprints, CAD files, and interior schedules shared with Simplex are stored in access-controlled repositories and are accessible only to our senior stone inspectors, quantity surveyors, and technical fabrication specialists.
+              We routinely execute formal bilateral Non-Disclosure Agreements (NDAs) with leading architecture practices, family offices, and developers on ultra-luxury residences, hospitality landmarks, and corporate headquarters.
             </p>
             <p>
-              Simplex does <strong>not sell, rent, lease, or monetize</strong> client personal information or project data to any third-party marketing companies.
+              All architectural blueprints, CAD drawings, material schedules, and bespoke cutting schedules shared with Simplex are retained in encrypted, access-controlled repositories. Access is restricted exclusively to our senior stone inspectors, quantity surveyors, and technical fabrication specialists assigned to your project.
+            </p>
+            <p>
+              Simplex maintains a strict institutional guarantee: we do <strong>not sell, rent, lease, trade, or monetize</strong> client personal data, firm credentials, or architectural project schedules to any external marketing agencies, advertising brokers, or tile dealers.
             </p>
           </section>
 
@@ -144,7 +147,10 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               Cookies & Local Spec Tray Storage
             </h2>
             <p>
-              Our web platform utilizes local storage (`localStorage`) solely to preserve your curated architectural moodboards and stone comparison trays between browsing sessions. You may clear your browser storage or moodboard at any time through the spec tray drawer interface.
+              Our web platform is engineered with privacy-by-default standards. We do not deploy third-party advertising trackers, invasive profiling pixels, or cross-site fingerprinting cookies.
+            </p>
+            <p>
+              We utilize browser Local Storage (`localStorage`) solely to preserve your curated architectural moodboards, slab comparison trays, and custom bookmatching configurations across your browser sessions without forcing you to log in. You may clear your browser storage or moodboard at any time through the spec tray drawer interface on this website or via your browser settings.
             </p>
           </section>
 
@@ -155,12 +161,15 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               Data Protection Rights & Grievance Officer
             </h2>
             <p>
-              Under the Digital Personal Data Protection Act, 2023, you retain the right to review, rectify, or request the deletion of your contact records and architectural files from our active trade databases.
+              Under Sections 11, 12, and 13 of the Digital Personal Data Protection Act, 2023 (DPDP Act) and Rule 5(9) of the Information Technology Rules, 2011, you possess enforceable statutory rights to access a summary of your data, correct inaccuracies, request the erasure of your contact records and CAD files upon project handover (subject to statutory tax retention laws), or file a formal grievance.
             </p>
-            <div className="pt-4 border-t border-[#EAE7DF] space-y-1 text-xs">
-              <div><strong>Data Governance Officer:</strong> Legal & Compliance Desk</div>
-              <div><strong>Registered Office:</strong> Simplex Pavilion, Dr. Annie Besant Road, Worli, Mumbai 400018, Maharashtra, India</div>
-              <div><strong>Direct Inquiries:</strong> privacy@simplexstone.in • +91 (022) 6940 8800</div>
+            <div className="pt-4 border-t border-[#EAE7DF] space-y-1.5 text-xs">
+              <div><strong>Designated Grievance Redressal Officer:</strong> Mr. Sameer Merchant, General Counsel & Head of Compliance</div>
+              <div><strong>Corporate Entity:</strong> Simplex Marble & Granite Private Limited (CIN: U14100MH1988PTC048912 | GSTIN: 27AABCS4891Q1Z4)</div>
+              <div><strong>Registered Flagship Pavilion:</strong> The Pavilion, Dr. Annie Besant Road, Opposite Nehru Centre, Worli, Mumbai 400018, Maharashtra, India</div>
+              <div><strong>Central Selection Stockyard:</strong> Plot 14, Sector 7, JNPT Logistics Corridor, Dronagiri Node, Navi Mumbai 410206, Maharashtra, India</div>
+              <div><strong>Direct Inquiries:</strong> compliance@simplexstone.in • Alternate: privacy@simplexstone.in • Phone: +91 (022) 6940 8800</div>
+              <div className="text-[11px] text-[#7D776E] pt-1"><strong>Statutory Resolution Timeline:</strong> Grievance acknowledgments are dispatched within 24 business hours, with full inquiry resolution completed within 15 calendar days.</div>
             </div>
           </section>
 
@@ -169,11 +178,11 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
         {/* Bottom CTA */}
         <div className="p-8 rounded-3xl bg-[#FFFFFF] border border-[#DCD9D1] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
           <div>
-            <h3 className="font-cinzel text-lg font-bold text-[#1A1A1A]">Have Questions Regarding Legal Compliance?</h3>
-            <p className="text-xs text-[#7D776E] mt-0.5">Our trade desk is available for corporate agreements and NDA executions.</p>
+            <h3 className="font-cinzel text-lg font-bold text-[#1A1A1A]">Require a Tailored Mutual NDA for Your Project?</h3>
+            <p className="text-xs text-[#7D776E] mt-0.5">Our legal and compliance desk coordinates directly with architectural project principals to execute project-specific confidentiality charters.</p>
           </div>
           <a
-            href="/contact?topic=Legal%20%26%20Privacy%20Inquiry"
+            href="/contact?topic=Corporate%20NDA%20%26%20Legal"
             onClick={(e) => {
               e.preventDefault();
               onNavigate('contact');
