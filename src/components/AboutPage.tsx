@@ -110,8 +110,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           <div className="lg:col-span-6 relative">
             <div className="rounded-3xl overflow-hidden bg-[#1A1A1A] border border-[#DCD9D1] shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-                alt="Simplex Atelier Mumbai Selection Gallery"
+                src="/images/home_section_1_flip.webp"
+                alt="Simplex Atelier Mumbai Bookmatched Marble Selection"
                 className="w-full h-[450px] object-cover"
               />
             </div>

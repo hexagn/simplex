@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { 
   Sparkles, 
@@ -24,6 +24,36 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
   onBookConsultation,
   onExploreCatalog
 }) => {
+  const countertopImages = [
+    {
+      label: 'Marble Countertops',
+      url: '/images/countertops/countertops-marble.jpg',
+      tag: 'Living & Vanity Countertop'
+    },
+    {
+      label: 'Bookmatched Flip',
+      url: '/images/home_section_1_flip.webp',
+      tag: 'Bookmatched Vein Cladding'
+    },
+    {
+      label: 'Kitchen Countertops',
+      url: '/images/countertops/countertops-kitchen.jpg',
+      tag: 'Gourmet Kitchen Island'
+    },
+    {
+      label: 'Granite Countertops',
+      url: '/images/countertops/countertops-granite.jpg',
+      tag: 'High-Density Granite'
+    },
+    {
+      label: 'Quartzite Countertops',
+      url: '/images/countertops/countertops-quartzite.jpg',
+      tag: 'Rare Exotic Quartzite'
+    }
+  ];
+
+  const [activeCountertopIdx, setActiveCountertopIdx] = useState(0);
+
   const pillars = [
     {
       num: '01',
@@ -107,22 +137,39 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
           
           {/* Left Column: Visual Showcase Card */}
           <div className="lg:col-span-5 flex flex-col justify-between rounded-3xl overflow-hidden bg-[#F8F7F4] border border-[#DCD9D1] p-6 sm:p-8 shadow-xs relative">
-            <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden bg-[#1A1A1A] mb-6">
+            <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden bg-[#1A1A1A] mb-4 group">
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-                alt="Simplex Atelier Mumbai Marble Masterpiece"
-                className="w-full h-full object-cover"
+                src={countertopImages[activeCountertopIdx].url}
+                alt={countertopImages[activeCountertopIdx].label}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               
               <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-[#FFFFFF]/90 backdrop-blur-md text-[#8F704D] text-[10px] font-semibold tracking-wider uppercase border border-[#DCD9D1] shadow-xs">
-                Flagship Atelier • Worli, Mumbai
+                {countertopImages[activeCountertopIdx].tag}
               </div>
 
               <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-white text-xs">
-                <span className="font-cinzel font-bold text-sm tracking-wide">3,400+ Slabs Ready in Stock</span>
-                <span className="text-[10px] text-[#C5A880] uppercase tracking-wider font-mono">100% Ultrasonic Inspected</span>
+                <span className="font-cinzel font-bold text-sm tracking-wide">{countertopImages[activeCountertopIdx].label}</span>
+                <span className="text-[10px] text-[#C5A880] uppercase tracking-wider font-mono">100% Precision Calibrated</span>
               </div>
+            </div>
+
+            {/* Quick Switch Pills between the 4 RK Marble Countertop Images */}
+            <div className="flex items-center gap-1.5 mb-4 overflow-x-auto pb-1 scrollbar-none">
+              {countertopImages.map((ct, idx) => (
+                <button
+                  key={ct.label}
+                  onClick={() => setActiveCountertopIdx(idx)}
+                  className={`px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
+                    activeCountertopIdx === idx
+                      ? 'bg-[#1A1A1A] text-white shadow-xs'
+                      : 'bg-[#FFFFFF] text-[#5C574F] hover:bg-[#EAE7DF] border border-[#DCD9D1]'
+                  }`}
+                >
+                  {ct.label.replace(' Countertops', '')}
+                </button>
+              ))}
             </div>
 
             <div className="space-y-4">

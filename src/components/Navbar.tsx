@@ -96,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: 'Collection', view: 'catalog', code: '01', href: '/collection' },
     { label: 'Atelier', view: 'visualizer', code: '02', href: '/atelier' },
     { label: 'Projects', view: 'projects', code: '03', href: '/projects' },
-    { label: 'Heritage', view: 'about', code: '04', href: '/heritage' },
+    { label: 'About', view: 'about', code: '04', href: '/about' },
     { label: 'Journal', view: 'blogs', code: '05', href: '/journal' },
     { label: 'Contact', view: 'contact', code: '06', href: '/contact' },
   ];

@@ -15,7 +15,7 @@ export const CategorySpotlight: React.FC<CategorySpotlightProps> = ({ onSelectCa
       subtitle: 'Calacatta, Statuario, Portoro & Rare European Metamorphic Slabs',
       count: `${categoryMeta.marble.count} Curated Slabs`,
       icon: Gem,
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
+      image: '/images/countertops/countertops-marble.jpg',
       highlights: ['Calacatta Borghini', 'Statuario Extra', 'Nero Portoro Gold', 'Arabescato Corchia'],
       rarity: 'Heritage Reserve'
     },
@@ -25,7 +25,7 @@ export const CategorySpotlight: React.FC<CategorySpotlightProps> = ({ onSelectCa
       subtitle: 'High-Density Magmatic Formations with Extreme Scratch & Thermal Resilience',
       count: `${categoryMeta.granite.count} Curated Slabs`,
       icon: Flame,
-      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85',
+      image: '/images/countertops/countertops-granite.jpg',
       highlights: ['Blue Bahia Imperial', 'Cosmic Black Gold', 'Lemurian Blue Labradorite', 'Nero Zimbabwe'],
       rarity: 'Volcanic Batholith'
     },
