@@ -102,7 +102,7 @@ export const TermsConditionsPage: React.FC<TermsConditionsPageProps> = ({ onNavi
               Stockyard Inspection & Slab Approval Protocol
             </h2>
             <p>
-              Prior to packaging and dispatch from our Navi Mumbai master stockyard:
+              Prior to packaging and dispatch from our Mumbai selection facility:
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-[#5C574F]">
               <li><strong>Physical Inspection:</strong> Buyers and consulting architects are strongly encouraged to inspect consecutive slabs in person under our calibrated daylight gantry crane bays.</li>

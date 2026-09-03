@@ -116,12 +116,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             </span>
           </div>
           <div className="flex items-center gap-4 text-[10px] tracking-[0.2em] uppercase text-[#7A746B]">
-            <span className="hidden sm:inline">FLAGSHIP EXPERIENCE CENTER • WORLI, MUMBAI</span>
+            <span className="hidden sm:inline">MARBLE MARKET • VILE PARLE (E), MUMBAI</span>
             <button
               onClick={() => handleOpenConsultation('Mumbai Atelier Visit')}
               className="text-[#8F704D] hover:text-[#1A1A1A] font-semibold underline underline-offset-4 cursor-pointer transition-colors"
             >
-              Visit Mumbai Atelier
+              Visit Selection Gallery
             </button>
           </div>
         </div>

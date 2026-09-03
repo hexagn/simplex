@@ -39,27 +39,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({
     },
     {
       num: '04',
-      title: 'Mumbai Stockyard Dry-Lay',
-      desc: 'Upon direct vessel discharge at JNPT port, consecutive slabs are dry-laid and laser-scanned at our Navi Mumbai yard, providing architects with full 3D vein alignment simulations before installation.'
+      title: 'Mumbai Gallery Dry-Lay',
+      desc: 'Consecutive slabs are dry-laid and laser-scanned at our Mumbai selection facility in Vile Parle (E), providing architects with full 3D vein alignment simulations before installation.'
     }
   ];
 
   const mumbaiLocations = [
     { 
-      type: 'Flagship Experience Atelier', 
-      name: 'Simplex Design Pavilion (Worli)',
-      address: 'The Pavilion, Dr. Annie Besant Road, Worli, Mumbai 400018, Maharashtra', 
-      phone: '+91 (022) 6940 8800',
-      hours: 'Mon – Sat: 10:00 AM – 7:30 PM (Sun by Private Appointment)',
-      desc: 'Curated 1:1 bookmatched gallery, material library, and private architect consultation suites.'
-    },
-    { 
-      type: 'Master Slab Stockyard & Crane Facility', 
-      name: 'Simplex Central Selection Yard (JNPT Corridor)',
-      address: 'Shed 4B, Panvel Industrial Hub / JNPT Logistics Corridor, Navi Mumbai 410206', 
-      phone: '+91 98200 45890',
-      hours: 'Mon – Sat: 9:00 AM – 6:30 PM',
-      desc: '3,400+ consecutive slabs in temperature-stabilized indoor gantry crane viewing bays.'
+      type: 'Flagship Gallery & Selection Atelier', 
+      name: 'Simplex Luxury Marble & Surfaces',
+      address: 'Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057', 
+      phone: '+91 99673 74940 / +91 99677 33305',
+      hours: 'Mon – Sat: 10:00 AM – 7:30 PM (Sun by Appointment)',
+      desc: 'Curated 1:1 bookmatched gallery, complete stone material library, and private architect consultation suites.'
     }
   ];
 
@@ -174,7 +166,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+          <div className="grid grid-cols-1 max-w-2xl mx-auto pt-4">
             {mumbaiLocations.map((loc, i) => (
               <div key={i} className="p-6 rounded-2xl bg-[#F8F7F4] border border-[#DCD9D1] space-y-3">
                 <div className="flex items-center gap-2 text-[#8F704D] text-xs font-semibold uppercase tracking-wider">
@@ -185,7 +177,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                 <p className="text-xs text-[#5C574F] leading-relaxed">{loc.address}</p>
                 <p className="text-xs text-[#7D776E] italic font-light">{loc.desc}</p>
                 <div className="pt-2 border-t border-[#EAE7DF] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-                  <span className="font-mono text-[#1A1A1A] font-semibold">{loc.phone}</span>
+                  <a href={`tel:${loc.phone.replace(/[^0-9+]/g, '')}`} className="font-mono text-[#1A1A1A] font-semibold hover:text-[#8F704D] transition-colors">{loc.phone}</a>
                   <span className="text-[11px] text-[#7D776E]">{loc.hours}</span>
                 </div>
               </div>

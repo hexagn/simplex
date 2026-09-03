@@ -69,8 +69,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
     },
     {
       num: '03',
-      title: 'Mumbai Gantry Crane Viewing',
-      desc: 'Experience 3,400+ consecutive slabs under calibrated natural daylight in our Worli Atelier & Navi Mumbai yard.',
+      title: 'Mumbai Gallery Slab Viewing',
+      desc: 'Experience 3,400+ consecutive slabs under calibrated natural daylight at our Vile Parle selection gallery.',
       icon: Building2
     },
     {
@@ -186,7 +186,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               <div className="pt-4 border-t border-[#DCD9D1] flex items-center justify-between text-xs text-[#8F704D]">
                 <span className="text-[#7D776E] flex items-center gap-1.5 font-medium">
                   <MapPin className="w-3.5 h-3.5 text-[#8F704D]" />
-                  Worli Pavilion & JNPT Yard
+                  Vile Parle Selection Gallery
                 </span>
                 <a
                   href="/catalog"

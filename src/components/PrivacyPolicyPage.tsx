@@ -69,10 +69,10 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               Executive Commitment to Client Confidentiality
             </h2>
             <p>
-              Simplex Marble & Granite Private Limited (CIN: U14100MH1988PTC048912), incorporated under the Companies Act and having its registered corporate atelier at The Pavilion, Dr. Annie Besant Road, Worli, Mumbai 400018, Maharashtra, India ("Simplex", "Company", "we", "our", or "us"), operates as India's premier direct importer and stockist of curated Italian marble, exotic Brazilian quartzites, structural granite, and sintered architectural surfaces since 1988.
+              Simplex Marble & Granite Private Limited (CIN: U14100MH1988PTC048912), incorporated under the Companies Act and having its registered corporate atelier at Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057, Maharashtra, India ("Simplex", "Company", "we", "our", or "us"), operates as India's premier direct importer and stockist of curated Italian marble, exotic Brazilian quartzites, structural granite, and sintered architectural surfaces since 1988.
             </p>
             <p>
-              This Privacy Policy governs how we safeguard patron identities, architectural blueprints, bill-of-quantities (BOQ), cutting schedules, site GPS coordinates, and commercial records collected through our digital atelier (simplexstone.in), private Worli showroom viewings, and inspections at our central JNPT logistics yard, in strict adherence to the Digital Personal Data Protection Act, 2023 (DPDP Act) and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011.
+              This Privacy Policy governs how we safeguard patron identities, architectural blueprints, bill-of-quantities (BOQ), cutting schedules, site GPS coordinates, and commercial records collected through our digital atelier (simplexstone.in) and private viewings at our Vile Parle Selection Gallery, in strict adherence to the Digital Personal Data Protection Act, 2023 (DPDP Act) and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011.
             </p>
           </section>
 
@@ -83,7 +83,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               Information We Collect
             </h2>
             <p>
-              When you interact with our digital atelier, request custom swatch boxes, visit our Worli Experience Center or Navi Mumbai Stockyard, or submit trade inquiries, we may collect:
+              When you interact with our digital atelier, request custom swatch boxes, visit our Mumbai Selection Gallery in Vile Parle (E), or submit trade inquiries, we may collect:
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-[#5C574F]">
               <li><strong>Patron & Professional Credentials:</strong> Full legal name, Council of Architecture (COA) registration or IIID membership number (for architects and interior designers), architectural firm name, professional designation, WhatsApp business contact, verified email, and studio dispatch address.</li>
@@ -117,8 +117,8 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
                 <p className="text-xs text-[#7D776E]">Dispatching customized 10×10cm laser-cut stone swatches, compressive strength technical certificates, and quarry origin monographs via express courier to your architecture studio.</p>
               </div>
               <div className="p-4 rounded-xl bg-[#F8F7F4] border border-[#DCD9D1]">
-                <div className="font-semibold text-[#1A1A1A] mb-1">Private Atelier & Stockyard Appointments</div>
-                <p className="text-xs text-[#7D776E]">Scheduling private material viewing slots at our Worli Flagship Pavilion or arranging escorted overhead gantry crane dry-lay inspections at our Navi Mumbai yard.</p>
+                <div className="font-semibold text-[#1A1A1A] mb-1">Private Atelier & Gallery Appointments</div>
+                <p className="text-xs text-[#7D776E]">Scheduling private material viewing slots and dry-lay inspections at our Vile Parle Selection Gallery in Mumbai.</p>
               </div>
             </div>
           </section>
@@ -166,9 +166,8 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
             <div className="pt-4 border-t border-[#EAE7DF] space-y-1.5 text-xs">
               <div><strong>Designated Grievance Redressal Officer:</strong> Mr. Sameer Merchant, General Counsel & Head of Compliance</div>
               <div><strong>Corporate Entity:</strong> Simplex Marble & Granite Private Limited (CIN: U14100MH1988PTC048912 | GSTIN: 27AABCS4891Q1Z4)</div>
-              <div><strong>Registered Flagship Pavilion:</strong> The Pavilion, Dr. Annie Besant Road, Opposite Nehru Centre, Worli, Mumbai 400018, Maharashtra, India</div>
-              <div><strong>Central Selection Stockyard:</strong> Plot 14, Sector 7, JNPT Logistics Corridor, Dronagiri Node, Navi Mumbai 410206, Maharashtra, India</div>
-              <div><strong>Direct Inquiries:</strong> compliance@simplexstone.in • Alternate: privacy@simplexstone.in • Phone: +91 (022) 6940 8800</div>
+              <div><strong>Registered Address & Selection Gallery:</strong> Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057, Maharashtra, India</div>
+              <div><strong>Direct Inquiries:</strong> <a href="mailto:ddv25@yahoo.com" className="hover:underline text-[#8F704D]">ddv25@yahoo.com</a> • Phone: <a href="tel:+919967374940" className="hover:underline">+91 99673 74940</a> / <a href="tel:+919967733305" className="hover:underline">+91 99677 33305</a></div>
               <div className="text-[11px] text-[#7D776E] pt-1"><strong>Statutory Resolution Timeline:</strong> Grievance acknowledgments are dispatched within 24 business hours, with full inquiry resolution completed within 15 calendar days.</div>
             </div>
           </section>

@@ -114,8 +114,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   <Phone className="w-4 h-4 text-[#8F704D] shrink-0 mt-0.5" />
                   <div>
                     <span className="text-[#7D776E] block">Direct Mumbai Desk</span>
-                    <span className="font-mono text-[#1A1A1A] text-sm font-medium">+91 (022) 6940 8800</span>
-                    <span className="text-[10px] text-[#8F704D] block font-mono">WhatsApp: +91 98200 45890</span>
+                    <a href="tel:+919967374940" className="font-mono text-[#1A1A1A] text-sm font-medium hover:text-[#8F704D] transition-colors">+91 99673 74940</a>
+                    <a href="https://wa.me/919967733305" target="_blank" rel="noopener noreferrer" className="text-[10px] text-[#8F704D] block font-mono hover:underline">WhatsApp: +91 99677 33305</a>
                   </div>
                 </div>
 
@@ -123,7 +123,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   <Mail className="w-4 h-4 text-[#8F704D] shrink-0 mt-0.5" />
                   <div>
                     <span className="text-[#7D776E] block">Specifications & Inquiries</span>
-                    <span className="font-mono text-[#1A1A1A] text-sm font-medium">mumbai@simplexstone.in</span>
+                    <a href="mailto:ddv25@yahoo.com" className="font-mono text-[#1A1A1A] text-sm font-medium hover:text-[#8F704D] transition-colors">ddv25@yahoo.com</a>
                   </div>
                 </div>
 
@@ -137,20 +137,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               </div>
             </div>
 
-            {/* Mumbai Locations */}
+            {/* Mumbai Location */}
             <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#DCD9D1] shadow-xs space-y-4">
               <h3 className="font-cinzel text-base font-bold text-[#1A1A1A]">
-                Mumbai Experience Spaces
+                Mumbai Selection Gallery
               </h3>
 
               <div className="space-y-3 text-xs text-[#5C574F]">
                 <div className="pb-2 border-b border-[#EAE7DF]">
-                  <strong className="text-[#8F704D] block font-cinzel font-semibold">Flagship Atelier (Worli)</strong>
-                  <span>The Pavilion, Dr. Annie Besant Rd, Worli, Mumbai 400018</span>
-                </div>
-                <div className="pb-2 border-b border-[#EAE7DF]">
-                  <strong className="text-[#8F704D] block font-cinzel font-semibold">Master Slab Yard (Navi Mumbai)</strong>
-                  <span>Shed 4B, JNPT Logistics Corridor, Panvel 410206</span>
+                  <strong className="text-[#8F704D] block font-cinzel font-semibold">Flagship Gallery & Selection Yard</strong>
+                  <span>Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057</span>
                 </div>
                 <div>
                   <strong className="text-[#8F704D] block font-cinzel font-semibold">Pan-India White-Glove Dispatch</strong>
@@ -166,7 +162,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 <span>Simplex Mumbai Quality Assurance</span>
               </div>
               <p className="text-[11px] text-[#5C574F] font-light leading-relaxed">
-                All slab consignments cleared at JNPT include Italian & Brazilian origin certificates, ultrasonic structural density tests, GST 18% ITC invoices, and sequential slab bookmatch maps.
+                All slab consignments include Italian & Brazilian origin certificates, ultrasonic structural density tests, GST 18% ITC invoices, and sequential slab bookmatch maps.
               </p>
             </div>
 
@@ -257,7 +253,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+91 98200 12345"
+                      placeholder="+91 99673 74940"
                       className="w-full px-4 py-3 rounded-xl bg-[#F8F7F4] border border-[#DCD9D1] text-xs text-[#1A1A1A] placeholder-[#8A847A] focus:outline-none focus:border-[#8F704D]"
                     />
                   </div>

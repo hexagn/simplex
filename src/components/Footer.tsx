@@ -96,9 +96,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
             </p>
 
             <div className="pt-2 text-xs text-[#8A847A] space-y-1">
-              <div><strong>Mumbai Flagship:</strong> The Pavilion, Dr. Annie Besant Rd, Worli, Mumbai 400018</div>
-              <div><strong>Central Selection Yard:</strong> Shed 4B, JNPT Logistics Corridor, Navi Mumbai 410206</div>
-              <div><strong>Direct Trade Desk:</strong> +91 (022) 6940 8800 • mumbai@simplexstone.in</div>
+              <div><strong>Mumbai Selection Gallery:</strong> Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057</div>
+              <div><strong>Direct Trade Desk:</strong> <a href="tel:+919967374940" className="hover:text-white transition-colors">+91 99673 74940</a> / <a href="tel:+919967733305" className="hover:text-white transition-colors">+91 99677 33305</a> • <a href="mailto:ddv25@yahoo.com" className="hover:text-white transition-colors">ddv25@yahoo.com</a></div>
             </div>
           </div>
 
@@ -239,21 +238,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
                   }}
                   className="hover:text-[#C5A880] transition-colors cursor-pointer block"
                 >
-                  Mumbai Flagship & JNPT Yard
+                  Mumbai Selection Gallery & Atelier
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Mumbai Flagship Store */}
+          {/* Col 4: Mumbai Selection Gallery */}
           <div className="space-y-3 text-xs">
             <h4 className="font-cinzel text-sm font-bold text-[#C5A880] tracking-wider uppercase">
-              Mumbai Experience
+              Mumbai Atelier
             </h4>
             <div className="space-y-2 text-[#C4BDAF]">
-              <div><strong>Worli Atelier:</strong> +91 (022) 6940 8800</div>
-              <div><strong>WhatsApp VIP Line:</strong> +91 98200 45890</div>
-              <div><strong>JNPT Stockyard Desk:</strong> +91 98200 45892</div>
+              <div><strong>Vile Parle Gallery:</strong> <a href="tel:+919967374940" className="hover:text-white transition-colors">+91 99673 74940</a></div>
+              <div><strong>WhatsApp VIP Line:</strong> <a href="https://wa.me/919967733305" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+91 99677 33305</a></div>
+              <div><strong>Direct Trade Desk:</strong> <a href="tel:+919967733305" className="hover:text-white transition-colors">+91 99677 33305</a></div>
               <div><strong>Pan-India Logistics:</strong> Direct Crane Delivery</div>
               <div><strong>GST Compliant:</strong> 18% ITC Invoicing</div>
             </div>

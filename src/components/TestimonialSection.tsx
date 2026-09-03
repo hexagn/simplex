@@ -47,7 +47,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
       projectType: '14,000 sq.ft Private Penthouse',
       stoneSpecified: 'Calacatta Borghini Extra & Patagonia Crystal Quartzite',
       rating: 5,
-      quote: 'Simplex is unparalleled in India for bookmatched marble precision. Their team at the JNPT yard dry-laid 28 sequential slabs under gantry cranes so my client and I could inspect every vein intersection before dispatch. The final installation in the double-height foyer is an architectural triumph.',
+      quote: 'Simplex is unparalleled in India for bookmatched marble precision. Their team dry-laid 28 sequential slabs so my client and I could inspect every vein intersection before dispatch. The final installation in the double-height foyer is an architectural triumph.',
       highlight: 'Flawless 4-Way Bookmatching & Zero Vein Discontinuity',
       year: '2025 Realization',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85&stone=room&view=812'
@@ -89,7 +89,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
       projectType: 'Contemporary Architectural Villa',
       stoneSpecified: 'Grigio Carnico & Arabescato Orobico Grey',
       rating: 5,
-      quote: 'The level of curation at Simplex’s Worli atelier is unmatched. They don’t just sell stone; they act as geological consultants who understand architectural lighting, sealant chemistry, and bookmatched balance. My go-to partner for all marquee luxury projects.',
+      quote: 'The level of curation at Simplex’s Mumbai atelier is unmatched. They don’t just sell stone; they act as geological consultants who understand architectural lighting, sealant chemistry, and bookmatched balance. My go-to partner for all marquee luxury projects.',
       highlight: 'Geological Advisory & Expert Lighting Integration',
       year: '2026 Realization',
       image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85&stone=room&view=815'

@@ -101,11 +101,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             >
               <span className="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-[#FFFFFF] border border-[#DCD9D1] text-[#8F704D] text-[10px] font-semibold tracking-[0.22em] uppercase font-outfit shadow-xs">
                 <Sparkles className="w-3 h-3 text-[#8F704D]" />
-                Mumbai Flagship Atelier & Stockyard
+                Mumbai Flagship Selection Gallery
               </span>
               <span className="text-[#C4BEB3] text-xs hidden sm:inline">•</span>
               <span className="text-[#7A746B] text-[11px] tracking-[0.16em] uppercase font-medium font-outfit">
-                Worli Experience Gallery • JNPT Port Stockyard
+                Marble Market, Vile Parle (E), Mumbai - 400057
               </span>
             </motion.div>
 
@@ -130,7 +130,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-[#59544C] text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed font-sans-luxury"
             >
-              Direct quarry shipments to our Mumbai stockyard in Worli & Navi Mumbai. Bookmatched consecutive slabs of rare Italian marble, 
+              Direct quarry shipments to our Mumbai selection gallery in Vile Parle (E). Bookmatched consecutive slabs of rare Italian marble, 
               volcanic granites, Brazilian quartzites, and Indian heritage stones for prestigious architectural commissions across Mumbai and India.
             </motion.p>
 
