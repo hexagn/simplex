@@ -665,7 +665,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
                           <div className="text-xs italic text-[#7D776E] font-cormorant">{product.italianName}</div>
                         )}
                       </div>
-                      <span className="text-base font-bold text-[#8F704D]">{product.priceTier}</span>
+                      {/* <span className="text-base font-bold text-[#8F704D]">{product.priceTier}</span> */}
                     </div>
 
                     <p className="text-xs sm:text-sm text-[#5C574F] font-light leading-relaxed">
