@@ -69,7 +69,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               Executive Commitment to Client Confidentiality
             </h2>
             <p>
-              Simplex Marble Granite (CIN: U14100MH1988PTC048912), incorporated under the Companies Act and having its registered corporate atelier at Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057, Maharashtra, India ("Simplex", "Company", "we", "our", or "us"), operates as India's premier direct importer and stockist of curated Italian marble, exotic Brazilian quartzites, structural granite, and sintered architectural surfaces since 1988.
+              Simplex Marble Granite, having its registered gallery at Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057, Maharashtra, India ("Simplex", "Company", "we", "our", or "us"), operates as India's premier direct importer and stockist of curated Italian marble, exotic Brazilian quartzites, structural granite, and sintered architectural surfaces since 1988.
             </p>
             <p>
               This Privacy Policy governs how we safeguard patron identities, architectural blueprints, bill-of-quantities (BOQ), cutting schedules, site GPS coordinates, and commercial records collected through our digital atelier (simplexstone.in) and private viewings at our Vile Parle Selection Gallery, in strict adherence to the Digital Personal Data Protection Act, 2023 (DPDP Act) and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011.
@@ -164,8 +164,8 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               Under Sections 11, 12, and 13 of the Digital Personal Data Protection Act, 2023 (DPDP Act) and Rule 5(9) of the Information Technology Rules, 2011, you possess enforceable statutory rights to access a summary of your data, correct inaccuracies, request the erasure of your contact records and CAD files upon project handover (subject to statutory tax retention laws), or file a formal grievance.
             </p>
             <div className="pt-4 border-t border-[#EAE7DF] space-y-1.5 text-xs">
-              <div><strong>Designated Grievance Redressal Officer:</strong> Mr. Sameer Merchant, General Counsel & Head of Compliance</div>
-              <div><strong>Corporate Entity:</strong> Simplex Marble Granite (CIN: U14100MH1988PTC048912 | GSTIN: 27AABCS4891Q1Z4)</div>
+              <div><strong>Designated Grievance Redressal Officer:</strong> Compliance & Grievance Desk, Simplex Marble Granite</div>
+              <div><strong>Corporate Entity:</strong> Simplex Marble Granite</div>
               <div><strong>Registered Address & Selection Gallery:</strong> Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057, Maharashtra, India</div>
               <div><strong>Direct Inquiries:</strong> <a href="mailto:ddv25@yahoo.com" className="hover:underline text-[#8F704D]">ddv25@yahoo.com</a> • Phone: <a href="tel:+919967374940" className="hover:underline">+91 99673 74940</a> / <a href="tel:+919967733305" className="hover:underline">+91 99677 33305</a></div>
               <div className="text-[11px] text-[#7D776E] pt-1"><strong>Statutory Resolution Timeline:</strong> Grievance acknowledgments are dispatched within 24 business hours, with full inquiry resolution completed within 15 calendar days.</div>

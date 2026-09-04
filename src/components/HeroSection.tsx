@@ -1,23 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useEffect, useRef } from 'react';
+import { motion } from 'motion/react';
 import { 
   ArrowRight, 
   Sparkles, 
-  Layers, 
-  ChevronRight,
-  Eye,
-  CheckCircle2,
-  Maximize2
+  Layers
 } from 'lucide-react';
 import { StoneProduct } from '../types';
-import { getFeaturedProducts, allProducts } from '../data/products';
+import { allProducts } from '../data/products';
 
 interface HeroSectionProps {
   onExploreCatalog?: (category?: string) => void;
   onExploreCollections?: () => void;
   onOpenVisualizer?: () => void;
   onBookConsultation?: () => void;
-  onSelectProduct: (product: StoneProduct) => void;
+  onSelectProduct?: (product: StoneProduct) => void;
   onRequestSampleKit?: () => void;
 }
 
@@ -29,10 +25,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onSelectProduct,
   onRequestSampleKit
 }) => {
-  const featured = getFeaturedProducts();
-  const featuredStones = featured.length > 0 ? featured.slice(0, 4) : allProducts.slice(0, 4);
-  const [activeStoneIdx, setActiveStoneIdx] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
@@ -43,27 +35,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     }
   }, []);
 
-  // Auto slide every 3 seconds
-  useEffect(() => {
-    if (isPaused || featuredStones.length === 0) return;
-
-    const timer = setInterval(() => {
-      setActiveStoneIdx((prev) => (prev + 1) % featuredStones.length);
-    }, 3000);
-
-    return () => clearInterval(timer);
-  }, [isPaused, featuredStones.length]);
-
-  const activeStone = featuredStones[activeStoneIdx] || featuredStones[0] || allProducts[0];
-  if (!activeStone) return null;
-
   return (
-    <section className="relative min-h-[88vh] flex flex-col justify-center overflow-hidden pt-8 pb-6 lg:pt-14 lg:pb-8 border-b border-[#DCD9D1] bg-[#F8F7F4]">
-      {/* Background Marble & Tiles Architectural Video - Clearly Visible, No White Overlay */}
+    <section className="relative min-h-[88vh] flex flex-col justify-center overflow-hidden pt-12 pb-10 lg:pt-20 lg:pb-16 border-b border-[#2E2B26] bg-[#141414]">
+      {/* Background Marble Video with Cinematic Black Overlay */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <video
           ref={videoRef}
-          src="/videos/marble-tiles-bg.mp4"
+          src="/videos/simplex-marbles.mp4"
           autoPlay
           loop
           muted
@@ -75,261 +53,120 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           }}
           className="w-full h-full object-cover"
         />
-        {/* Subtle Delicate Overlay Layer */}
-        <div className="absolute inset-0 bg-[#F8F7F4]/25 backdrop-blur-[1px] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F8F7F4]/40 via-[#F8F7F4]/15 to-transparent pointer-events-none" />
+        {/* Light Transparent Black Overlay - Video Is Clearly Visible */}
+        <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/15 to-transparent pointer-events-none" />
       </div>
 
-      {/* Background Architectural Grid & Subtle Light Diffuse */}
+      {/* Background Architectural Grid & Subtle Amber Diffuse */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-radial from-[#8F704D]/6 via-transparent to-transparent blur-3xl"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:5rem_5rem]"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-radial from-[#C5A880]/10 via-transparent to-transparent blur-3xl"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:5rem_5rem]"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        {/* Left Column Content: Full Width / Hero Grandeur */}
+        <div className="max-w-3xl space-y-6 text-center lg:text-left">
           
-          {/* Left Column: Typographic Grandeur */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            
-            {/* Monograph Eyebrow Tag */}
-            <motion.div
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-3"
-            >
-              <span className="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-[#FFFFFF] border border-[#DCD9D1] text-[#8F704D] text-[10px] font-semibold tracking-[0.22em] uppercase font-outfit shadow-xs">
-                <Sparkles className="w-3 h-3 text-[#8F704D]" />
-                Mumbai Flagship Selection Gallery
-              </span>
-              <span className="text-[#C4BEB3] text-xs hidden sm:inline">•</span>
-              <span className="text-[#7A746B] text-[11px] tracking-[0.16em] uppercase font-medium font-outfit">
-                Marble Market, Vile Parle (E), Mumbai - 400057
-              </span>
-            </motion.div>
-
-            {/* Architectural Display Headline */}
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-cinzel text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-semibold tracking-[-0.02em] text-[#1A1A1A] leading-[1.1]"
-            >
-              Masterpieces of the Earth. <br />
-              <span className="font-cormorant italic font-normal text-[#8F704D] tracking-normal">
-                Curated for India's Timeless
-              </span>{' '}
-              Spaces.
-            </motion.h1>
-
-            {/* Editorial Lead Paragraph */}
-            <motion.p 
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-[#59544C] text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed font-sans-luxury"
-            >
-              Direct quarry shipments to our Mumbai selection gallery in Vile Parle (E). Bookmatched consecutive slabs of rare Italian marble, 
-              volcanic granites, Brazilian quartzites, and Indian heritage stones for prestigious architectural commissions across Mumbai and India.
-            </motion.p>
-
-            {/* Action Triggers */}
-            <motion.div 
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2"
-            >
-              <a
-                href="/catalog"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (onExploreCatalog) onExploreCatalog();
-                  else onExploreCollections?.();
-                }}
-                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#1A1A1A] hover:bg-[#33302B] text-white font-medium text-[11px] tracking-[0.2em] uppercase font-outfit flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 shadow-sm cursor-pointer"
-              >
-                <span>View {allProducts.length}+ Slabs In Mumbai Yard</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-
-              <a
-                href="/visualizer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (onOpenVisualizer) onOpenVisualizer();
-                }}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#FFFFFF] hover:bg-[#F3F1EC] text-[#1A1A1A] border border-[#DCD9D1] hover:border-[#8F704D] font-medium text-[11px] tracking-[0.2em] uppercase font-outfit flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs"
-              >
-                <Layers className="w-3.5 h-3.5 text-[#8F704D]" />
-                <span>Bookmatch Simulator</span>
-              </a>
-            </motion.div>
-
-            {/* Architectural Trust Strip */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="pt-6 border-t border-[#DCD9D1] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center lg:text-left"
-            >
-              <div>
-                <div className="font-cinzel text-xl sm:text-2xl font-bold text-[#1A1A1A]">3,400+</div>
-                <div className="text-[10px] text-[#7D776E] uppercase tracking-[0.16em] font-outfit mt-0.5">Slabs in Mumbai Stock</div>
-              </div>
-              <div>
-                <div className="font-cinzel text-xl sm:text-2xl font-bold text-[#1A1A1A]">48</div>
-                <div className="text-[10px] text-[#7D776E] uppercase tracking-[0.16em] font-outfit mt-0.5">Global Quarries</div>
-              </div>
-              <div>
-                <div className="font-cinzel text-xl sm:text-2xl font-bold text-[#1A1A1A]">100%</div>
-                <div className="text-[10px] text-[#7D776E] uppercase tracking-[0.16em] font-outfit mt-0.5">Ultrasonic Inspected</div>
-              </div>
-              <div>
-                <div className="font-cinzel text-xl sm:text-2xl font-bold text-[#8F704D]">250+</div>
-                <div className="text-[10px] text-[#7D776E] uppercase tracking-[0.16em] font-outfit mt-0.5">Indian Estates Realized</div>
-              </div>
-            </motion.div>
-
-          </div>
-
-          {/* Right Column: Hero Showcase Card with Smooth Transitions */}
-          <div 
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            className="lg:col-span-5"
+          {/* Monograph Eyebrow Tag */}
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-3"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96, y: 30 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative mx-auto max-w-md lg:max-w-none"
+            <span className="inline-flex items-center gap-1.5 py-1 px-3.5 rounded-full bg-black/40 backdrop-blur-md border border-[#C5A880]/30 text-[#C5A880] text-[10px] font-semibold tracking-[0.22em] uppercase font-outfit shadow-sm">
+              <Sparkles className="w-3 h-3 text-[#C5A880]" />
+              Mumbai Flagship Selection Gallery
+            </span>
+            <span className="text-[#8C8579] text-xs hidden sm:inline">•</span>
+            <span className="text-[#D6D0C5] text-[11px] tracking-[0.16em] uppercase font-medium font-outfit">
+              Marble Market, Vile Parle (E), Mumbai - 400057
+            </span>
+          </motion.div>
+
+          {/* Architectural Display Headline */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="font-cinzel text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-semibold tracking-[-0.02em] text-[#FFFFFF] leading-[1.1] drop-shadow-sm"
+          >
+            Masterpieces of the Earth. <br />
+            <span className="font-cormorant italic font-normal text-[#C5A880] tracking-normal">
+              Curated for India's Timeless
+            </span>{' '}
+            Spaces.
+          </motion.h1>
+
+          {/* Editorial Lead Paragraph */}
+          <motion.p 
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-[#E0DDD5] text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed font-sans-luxury drop-shadow-xs"
+          >
+            Direct quarry shipments to our Mumbai selection gallery in Vile Parle (E). Bookmatched consecutive slabs of rare Italian marble, 
+            volcanic granites, Brazilian quartzites, and Indian heritage stones for prestigious architectural commissions across Mumbai and India.
+          </motion.p>
+
+          {/* Action Triggers */}
+          <motion.div 
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2"
+          >
+            <a
+              href="/catalog"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onExploreCatalog) onExploreCatalog();
+                else onExploreCollections?.();
+              }}
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#C5A880] hover:bg-[#D4B991] text-[#1A1A1A] font-semibold text-[11px] tracking-[0.2em] uppercase font-outfit flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 shadow-md cursor-pointer"
             >
-              
-              {/* Active Slab Monolith Card */}
-              <div className="relative rounded-2xl overflow-hidden bg-[#FFFFFF] border border-[#DCD9D1] shadow-lg group">
-                
-                {/* Image Container with Animated Switch */}
-                <div className="relative h-80 sm:h-92 w-full overflow-hidden bg-[#1A1A1A]">
-                  <AnimatePresence mode="wait">
-                    <motion.img
-                      key={activeStone.id}
-                      src={activeStone.image}
-                      alt={activeStone.name}
-                      initial={{ opacity: 0, scale: 1.05 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.98 }}
-                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                      className="w-full h-full object-cover object-center"
-                    />
-                  </AnimatePresence>
-                  
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent pointer-events-none"></div>
+              <span>View {allProducts.length}+ Slabs In Mumbai Yard</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
 
-                  {/* Badges Over Image */}
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                    <span className="px-2.5 py-1 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md text-[#8F704D] text-[9px] font-semibold tracking-[0.2em] uppercase border border-[#DCD9D1] font-outfit">
-                      {activeStone.rarity.split(' ')[0]} Reserve
-                    </span>
-                    {/* <span className="px-2.5 py-1 rounded-full bg-[#FFFFFF]/95 backdrop-blur-md text-[#1A1A1A] text-[9px] tracking-[0.14em] uppercase border border-[#DCD9D1] flex items-center gap-1.5 font-medium font-outfit">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                      {activeStone.inStockSlabs} Slabs Ready
-                    </span> */}
-                  </div>
+            <a
+              href="/visualizer"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onOpenVisualizer) onOpenVisualizer();
+              }}
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/25 backdrop-blur-md font-medium text-[11px] tracking-[0.2em] uppercase font-outfit flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs"
+            >
+              <Layers className="w-3.5 h-3.5 text-[#C5A880]" />
+              <span>Bookmatch Simulator</span>
+            </a>
+          </motion.div>
 
-                  {/* Direct Inspection Action */}
-                  <div className="absolute bottom-4 right-4 flex items-center gap-2">
-                    <button
-                      onClick={() => onSelectProduct(activeStone)}
-                      className="p-2.5 rounded-full bg-[#FFFFFF]/90 hover:bg-[#8F704D] text-[#1A1A1A] hover:text-white backdrop-blur-md border border-[#DCD9D1] transition-all cursor-pointer shadow-md"
-                      title="Inspect Technical Dossier"
-                    >
-                      <Eye className="w-3.5 h-3.5" />
-                    </button>
-                    <button
-                      onClick={onOpenVisualizer}
-                      className="p-2.5 rounded-full bg-[#FFFFFF]/90 hover:bg-[#8F704D] text-[#1A1A1A] hover:text-white backdrop-blur-md border border-[#DCD9D1] transition-all cursor-pointer shadow-md"
-                      title="Launch Bookmatch Studio"
-                    >
-                      <Layers className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Card Information */}
-                <div className="p-5 sm:p-6 space-y-3.5 bg-[#FFFFFF]">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <div className="text-[10px] font-mono tracking-[0.2em] uppercase text-[#8F704D] font-semibold">
-                        {activeStone.categoryLabel} • {activeStone.originCountry}
-                      </div>
-                      <h3 className="font-cinzel text-lg sm:text-xl font-bold text-[#1A1A1A] mt-0.5">
-                        {activeStone.name}
-                      </h3>
-                      {activeStone.italianName && (
-                        <p className="text-xs italic text-[#7A746B] font-cormorant">
-                          {activeStone.italianName}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-[#59544C] line-clamp-2 leading-relaxed font-light">
-                    {activeStone.description}
-                  </p>
-
-                  {/* Micro Specs */}
-                  <div className="grid grid-cols-3 gap-2 pt-2 border-t border-[#EAE7DF] text-[10px] font-outfit">
-                    <div className="bg-[#F8F7F4] p-2 rounded-lg border border-[#DCD9D1]">
-                      <div className="text-[#8C8579] uppercase tracking-wider text-[8px]">Basin</div>
-                      <div className="text-[#1A1A1A] font-medium truncate">{activeStone.originRegion.split(',')[0]}</div>
-                    </div>
-                    <div className="bg-[#F8F7F4] p-2 rounded-lg border border-[#DCD9D1]">
-                      <div className="text-[#8C8579] uppercase tracking-wider text-[8px]">Density</div>
-                      <div className="text-[#1A1A1A] font-medium">{activeStone.specs.density}</div>
-                    </div>
-                    <div className="bg-[#F8F7F4] p-2 rounded-lg border border-[#DCD9D1]">
-                      <div className="text-[#8C8579] uppercase tracking-wider text-[8px]">Thickness</div>
-                      <div className="text-[#1A1A1A] font-medium">{activeStone.specs.availableThicknesses[0]}</div>
-                    </div>
-                  </div>
-
-                  {/* Interactive Button */}
-                  <button
-                    onClick={() => onSelectProduct(activeStone)}
-                    className="w-full py-2.5 rounded-xl bg-[#F8F7F4] hover:bg-[#1A1A1A] hover:text-white text-[#1A1A1A] text-[10px] font-semibold tracking-[0.2em] uppercase font-outfit transition-all flex items-center justify-center gap-2 cursor-pointer border border-[#DCD9D1]"
-                  >
-                    <span>Inspect Slab Dossier & Bookmatch</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Stone Selection Thumbnails */}
-              <div className="mt-3 flex items-center justify-between gap-3">
-                <span className="text-[10px] text-[#7A746B] uppercase tracking-[0.2em] font-medium font-outfit">
-                  Select Reserve:
-                </span>
-                <div className="flex gap-2">
-                  {featuredStones.map((stone, idx) => (
-                    <button
-                      key={stone.id}
-                      onClick={() => setActiveStoneIdx(idx)}
-                      className={`relative w-11 h-11 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
-                        activeStoneIdx === idx
-                          ? 'border-[#8F704D] scale-105 shadow-sm'
-                          : 'border-[#DCD9D1] opacity-70 hover:opacity-100'
-                      }`}
-                    >
-                      <img src={stone.image} alt={stone.name} className="w-full h-full object-cover" />
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-            </motion.div>
-          </div>
+          {/* Architectural Trust Strip */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="pt-6 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center lg:text-left max-w-2xl"
+          >
+            <div>
+              <div className="font-cinzel text-xl sm:text-2xl font-bold text-[#FFFFFF]">3,400+</div>
+              <div className="text-[10px] text-[#A8A298] uppercase tracking-[0.16em] font-outfit mt-0.5">Slabs in Mumbai Stock</div>
+            </div>
+            <div>
+              <div className="font-cinzel text-xl sm:text-2xl font-bold text-[#FFFFFF]">48</div>
+              <div className="text-[10px] text-[#A8A298] uppercase tracking-[0.16em] font-outfit mt-0.5">Global Quarries</div>
+            </div>
+            <div>
+              <div className="font-cinzel text-xl sm:text-2xl font-bold text-[#FFFFFF]">100%</div>
+              <div className="text-[10px] text-[#A8A298] uppercase tracking-[0.16em] font-outfit mt-0.5">Ultrasonic Inspected</div>
+            </div>
+            <div>
+              <div className="font-cinzel text-xl sm:text-2xl font-bold text-[#C5A880]">250+</div>
+              <div className="text-[10px] text-[#A8A298] uppercase tracking-[0.16em] font-outfit mt-0.5">Indian Estates Realized</div>
+            </div>
+          </motion.div>
 
         </div>
       </div>
