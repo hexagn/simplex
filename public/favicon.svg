@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient (Rich Obsidian Stone) -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22201C" />
+      <stop offset="45%" stop-color="#161513" />
+      <stop offset="100%" stop-color="#0D0C0B" />
+    </linearGradient>
+
+    <!-- Warm Gold Gradient for Monogram -->
+    <linearGradient id="goldGradient" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FCECD2" />
+      <stop offset="20%" stop-color="#E5C38C" />
+      <stop offset="50%" stop-color="#C89E5F" />
+      <stop offset="80%" stop-color="#9E763E" />
+      <stop offset="100%" stop-color="#DAB475" />
+    </linearGradient>
+
+    <!-- Gold Border Gradient -->
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCECD2" />
+      <stop offset="30%" stop-color="#C89E5F" />
+      <stop offset="70%" stop-color="#8F6F40" />
+      <stop offset="100%" stop-color="#DFBA7F" />
+    </linearGradient>
+
+    <!-- Subtle Radial Core Glow -->
+    <radialGradient id="coreGlow" cx="50%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#C89E5F" stop-opacity="0.16" />
+      <stop offset="60%" stop-color="#C89E5F" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="subtleShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.7" />
+    </filter>
+  </defs>
+
+  <!-- Base Squircle -->
+  <rect width="512" height="512" rx="116" fill="url(#bgGradient)" />
+  <rect width="512" height="512" rx="116" fill="url(#coreGlow)" />
+
+  <!-- Outer Luxury Gold Border -->
+  <rect x="14" y="14" width="484" height="484" rx="102" fill="none" stroke="url(#goldBorder)" stroke-width="12" stroke-opacity="0.85" />
+
+  <!-- Inner Architectural Accent Ring -->
+  <rect x="30" y="30" width="452" height="452" rx="86" fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-opacity="0.35" />
+
+  <!-- Sculpted Monogram "S" -->
+  <path d="M 249.24 92.0 Q 258.25 92.0 271.54 92.9 Q 284.84 93.8 299.03 95.38 Q 313.22 96.96 323.81 98.53 Q 334.4 100.11 338.45 101.91 L 333.04 162.74 L 328.54 162.74 Q 328.54 139.31 311.19 125.12 Q 293.85 110.92 265.01 110.92 Q 238.88 110.92 222.88 123.54 Q 206.89 136.15 205.99 154.18 Q 205.54 167.69 214.55 177.6 Q 223.56 187.52 237.53 196.08 L 323.58 251.95 Q 344.31 263.66 354.9 282.58 Q 365.48 301.51 364.13 326.74 Q 361.88 370.89 330.34 395.45 Q 298.8 420.0 244.74 420.0 Q 224.91 420.0 206.21 416.62 Q 187.52 413.24 173.1 407.16 Q 158.68 401.08 150.12 392.52 Q 146.52 382.6 146.97 368.64 Q 147.42 354.67 151.25 340.25 Q 155.08 325.84 160.93 316.37 L 164.99 316.37 Q 163.19 339.35 173.32 358.95 Q 183.46 378.55 203.06 390.04 Q 222.66 401.53 249.69 401.08 Q 279.43 400.63 295.65 385.98 Q 311.87 371.34 311.87 350.62 Q 311.87 336.65 303.53 325.38 Q 295.2 314.12 276.27 303.76 L 197.43 251.49 Q 173.55 237.98 162.74 216.8 Q 151.92 195.63 154.18 170.85 Q 156.43 147.42 168.14 129.62 Q 179.86 111.82 200.36 101.91 Q 220.86 92.0 249.24 92.0 Z M 338.9 96.51 L 338.0 105.97 L 284.84 105.97 L 284.84 96.51 Z" fill="url(#goldGradient)" filter="url(#subtleShadow)" />
+</svg>
