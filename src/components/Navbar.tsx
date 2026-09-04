@@ -143,6 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Brand Logo - Sculptural & Elegant */}
             <a
               href="/"
+              title="Simplex Marble Granite"
               onClick={(e) => {
                 e.preventDefault();
                 handleViewChange('home');
@@ -153,9 +154,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="font-cinzel text-xl sm:text-2xl font-bold tracking-[0.3em] text-[#1A1A1A] group-hover:text-[#8F704D] transition-colors">
                   SIMPLEX
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8F704D]"></span>
+                {/* <span className="w-1.5 h-1.5 rounded-full bg-[#8F704D]"></span> */}
               </div>
-              <span className="text-[8px] tracking-[0.35em] uppercase text-[#8C8579] font-medium font-outfit">
+              <span className="text-[8.5px] tracking-[0.35em] uppercase text-[#8C8579] font-medium font-outfit">
                 marble • granite • tiles
               </span>
             </a>

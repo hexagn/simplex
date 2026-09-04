@@ -29,7 +29,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
               className="hover:text-[#8F704D] transition-colors"
             >
-              Simplex Atelier
+              Simplex Marble Granite
             </a>
             <span>/</span>
             <span className="text-[#1A1A1A] font-semibold">Privacy Policy</span>
@@ -55,7 +55,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
             Privacy Policy & Trade Governance
           </h1>
           <p className="text-xs text-[#7D776E] tracking-wider uppercase font-mono">
-            Simplex Marble & Granite Pvt. Ltd. • Compliant with DPDP Act, 2023 (India) & IT Act, 2000
+            Simplex Marble Granite • Compliant with DPDP Act, 2023 (India) & IT Act, 2000
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               Executive Commitment to Client Confidentiality
             </h2>
             <p>
-              Simplex Marble & Granite Private Limited (CIN: U14100MH1988PTC048912), incorporated under the Companies Act and having its registered corporate atelier at Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057, Maharashtra, India ("Simplex", "Company", "we", "our", or "us"), operates as India's premier direct importer and stockist of curated Italian marble, exotic Brazilian quartzites, structural granite, and sintered architectural surfaces since 1988.
+              Simplex Marble Granite (CIN: U14100MH1988PTC048912), incorporated under the Companies Act and having its registered corporate atelier at Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057, Maharashtra, India ("Simplex", "Company", "we", "our", or "us"), operates as India's premier direct importer and stockist of curated Italian marble, exotic Brazilian quartzites, structural granite, and sintered architectural surfaces since 1988.
             </p>
             <p>
               This Privacy Policy governs how we safeguard patron identities, architectural blueprints, bill-of-quantities (BOQ), cutting schedules, site GPS coordinates, and commercial records collected through our digital atelier (simplexstone.in) and private viewings at our Vile Parle Selection Gallery, in strict adherence to the Digital Personal Data Protection Act, 2023 (DPDP Act) and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011.
@@ -133,10 +133,10 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
               We routinely execute formal bilateral Non-Disclosure Agreements (NDAs) with leading architecture practices, family offices, and developers on ultra-luxury residences, hospitality landmarks, and corporate headquarters.
             </p>
             <p>
-              All architectural blueprints, CAD drawings, material schedules, and bespoke cutting schedules shared with Simplex are retained in encrypted, access-controlled repositories. Access is restricted exclusively to our senior stone inspectors, quantity surveyors, and technical fabrication specialists assigned to your project.
+              All architectural blueprints, CAD drawings, material schedules, and bespoke cutting schedules shared with Simplex Marble Granite are retained in encrypted, access-controlled repositories. Access is restricted exclusively to our senior stone inspectors, quantity surveyors, and technical fabrication specialists assigned to your project.
             </p>
             <p>
-              Simplex maintains a strict institutional guarantee: we do <strong>not sell, rent, lease, trade, or monetize</strong> client personal data, firm credentials, or architectural project schedules to any external marketing agencies, advertising brokers, or tile dealers.
+              Simplex Marble Granite maintains a strict institutional guarantee: we do <strong>not sell, rent, lease, trade, or monetize</strong> client personal data, firm credentials, or architectural project schedules to any external marketing agencies, advertising brokers, or tile dealers.
             </p>
           </section>
 
@@ -165,7 +165,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
             </p>
             <div className="pt-4 border-t border-[#EAE7DF] space-y-1.5 text-xs">
               <div><strong>Designated Grievance Redressal Officer:</strong> Mr. Sameer Merchant, General Counsel & Head of Compliance</div>
-              <div><strong>Corporate Entity:</strong> Simplex Marble & Granite Private Limited (CIN: U14100MH1988PTC048912 | GSTIN: 27AABCS4891Q1Z4)</div>
+              <div><strong>Corporate Entity:</strong> Simplex Marble Granite (CIN: U14100MH1988PTC048912 | GSTIN: 27AABCS4891Q1Z4)</div>
               <div><strong>Registered Address & Selection Gallery:</strong> Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057, Maharashtra, India</div>
               <div><strong>Direct Inquiries:</strong> <a href="mailto:ddv25@yahoo.com" className="hover:underline text-[#8F704D]">ddv25@yahoo.com</a> • Phone: <a href="tel:+919967374940" className="hover:underline">+91 99673 74940</a> / <a href="tel:+919967733305" className="hover:underline">+91 99677 33305</a></div>
               <div className="text-[11px] text-[#7D776E] pt-1"><strong>Statutory Resolution Timeline:</strong> Grievance acknowledgments are dispatched within 24 business hours, with full inquiry resolution completed within 15 calendar days.</div>

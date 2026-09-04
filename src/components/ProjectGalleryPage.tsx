@@ -46,7 +46,7 @@ export const ProjectGalleryPage: React.FC<ProjectGalleryPageProps> = ({
         {/* Page Header */}
         <div className="mb-12 space-y-4">
           <div className="flex items-center gap-2 text-xs tracking-widest uppercase text-[#7D776E]">
-            <span>Simplex Atelier</span>
+            <span>Simplex Marble Granite</span>
             <span>/</span>
             <span className="text-[#8F704D] font-medium">Architectural Gallery</span>
           </div>
@@ -57,7 +57,7 @@ export const ProjectGalleryPage: React.FC<ProjectGalleryPageProps> = ({
                 Signature Architectural Case Studies
               </h1>
               <p className="text-[#5C574F] text-sm sm:text-base font-light mt-2 max-w-2xl leading-relaxed">
-                A curated retrospective of award-winning private estates, Michelin-starred hospitality retreats, and luxury flagship boutiques realized with Simplex stone.
+                A curated retrospective of award-winning private estates, Michelin-starred hospitality retreats, and luxury flagship boutiques realized with Simplex Marble Granite.
               </p>
             </div>
 
@@ -231,7 +231,7 @@ export const ProjectGalleryPage: React.FC<ProjectGalleryPageProps> = ({
                   <p>{activeCaseStudy.challenge}</p>
                 </div>
                 <div>
-                  <h4 className="font-cinzel text-base font-bold text-[#8F704D] mb-1">The Simplex Sourcing & Slicing Solution</h4>
+                  <h4 className="font-cinzel text-base font-bold text-[#8F704D] mb-1">The Simplex Marble Granite Sourcing Solution</h4>
                   <p>{activeCaseStudy.solution}</p>
                 </div>
               </div>

@@ -169,7 +169,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
         {/* Top Breadcrumb & Heading */}
         <div className="mb-10 space-y-4">
           <div className="flex items-center gap-2 text-xs tracking-widest uppercase text-[#7D776E]">
-            <span>Simplex Atelier</span>
+            <span>Simplex Marble Granite</span>
             <span>/</span>
             <span className="text-[#8F704D] font-medium">Stone Catalog</span>
             {selectedCategory !== 'all' && (

@@ -46,7 +46,7 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({
         {/* Page Heading */}
         <div className="mb-12 space-y-4">
           <div className="flex items-center gap-2 text-xs tracking-widest uppercase text-[#7D776E]">
-            <span>Simplex Atelier</span>
+            <span>Simplex Marble Granite</span>
             <span>/</span>
             <span className="text-[#8F704D] font-medium">Monographs & Journal</span>
           </div>
@@ -57,7 +57,7 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({
                 Architectural Stone Insights
               </h1>
               <p className="text-[#5C574F] text-sm sm:text-base font-light mt-2 max-w-2xl leading-relaxed">
-                Geological field notes, bookmatching guidelines, and material durability essays authored by Simplex master stone inspectors and consulting architects.
+                Geological field notes, bookmatching guidelines, and material durability essays authored by Simplex Marble Granite master stone inspectors and consulting architects.
               </p>
             </div>
           </div>

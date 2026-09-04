@@ -94,7 +94,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F8F7F4] border border-[#DCD9D1] text-[#8F704D] text-[11px] font-semibold tracking-[0.2em] uppercase font-outfit shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-[#8F704D]" />
-              The Simplex Legacy • Mumbai, India
+              The Simplex Marble Granite Legacy • Mumbai, India
             </div>
 
             <h2 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#1A1A1A] leading-tight">
@@ -102,7 +102,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             </h2>
 
             <p className="text-sm sm:text-base text-[#59544C] font-light leading-relaxed">
-              Headquartered in Mumbai, Simplex connects the world’s most celebrated natural quarries with private residential estates, high-end penthouses, and bespoke hospitality retreats across India. Every slab in our stockyard is an unrepeatable work of art sculpted over millions of years.
+              Headquartered in Mumbai, Simplex Marble Granite connects the world’s most celebrated natural quarries with private residential estates, high-end penthouses, and bespoke hospitality retreats across India. Every slab in our stockyard is an unrepeatable work of art sculpted over millions of years.
             </p>
           </div>
 
@@ -233,7 +233,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
                   <div className="pt-4 mt-4 border-t border-[#EAE7DF] flex items-center gap-2 text-[10px] text-[#8F704D] uppercase tracking-wider font-semibold font-outfit">
                     <CheckCircle2 className="w-3 h-3 text-[#8F704D]" />
-                    <span>Simplex Certified Standard</span>
+                    <span>Simplex Marble Granite Certified Standard</span>
                   </div>
                 </div>
               );

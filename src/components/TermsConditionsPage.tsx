@@ -28,7 +28,7 @@ export const TermsConditionsPage: React.FC<TermsConditionsPageProps> = ({ onNavi
               onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
               className="hover:text-[#8F704D] transition-colors"
             >
-              Simplex Atelier
+              Simplex Marble Granite
             </a>
             <span>/</span>
             <span className="text-[#1A1A1A] font-semibold">Terms & Conditions</span>
@@ -54,7 +54,7 @@ export const TermsConditionsPage: React.FC<TermsConditionsPageProps> = ({ onNavi
             Terms & Conditions
           </h1>
           <p className="text-xs text-[#7D776E] tracking-wider uppercase font-mono">
-            Standard Architectural Trade Agreement • Simplex Marble & Architectural Surfaces Pvt. Ltd. (Mumbai)
+            Standard Architectural Trade Agreement • Simplex Marble Granite (Mumbai)
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export const TermsConditionsPage: React.FC<TermsConditionsPageProps> = ({ onNavi
               Scope & Commercial Application
             </h2>
             <p>
-              These Terms and Conditions govern all quotations, orders, proforma invoices, sales contracts, and deliveries entered into between Simplex Marble & Architectural Surfaces Pvt. Ltd. ("Simplex") and the purchasing entity, architect, contractor, PMC, or private client ("Buyer").
+              These Terms and Conditions govern all quotations, orders, proforma invoices, sales contracts, and deliveries entered into between Simplex Marble Granite ("Simplex") and the purchasing entity, architect, contractor, PMC, or private client ("Buyer").
             </p>
             <p>
               Issuance of a formal purchase order, remittance of an initial advance deposit, or physical sign-off on gangsaw slab lots constitutes unconditional acceptance of these terms.
@@ -106,7 +106,7 @@ export const TermsConditionsPage: React.FC<TermsConditionsPageProps> = ({ onNavi
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-[#5C574F]">
               <li><strong>Physical Inspection:</strong> Buyers and consulting architects are strongly encouraged to inspect consecutive slabs in person under our calibrated daylight gantry crane bays.</li>
-              <li><strong>High-Resolution Dry-Lay Sign-off:</strong> For outstation projects across India, Simplex provides 4K calibrated dry-lay photography and laser vein-matching documentation for formal electronic approval prior to loading.</li>
+              <li><strong>High-Resolution Dry-Lay Sign-off:</strong> For outstation projects across India, Simplex Marble Granite provides 4K calibrated dry-lay photography and laser vein-matching documentation for formal electronic approval prior to loading.</li>
               <li><strong>Finality of Approval:</strong> Once slab lots have been approved and sliced or loaded onto transport vehicles, no claims regarding natural aesthetics or surface veining will be entertained.</li>
             </ul>
           </section>
@@ -157,7 +157,7 @@ export const TermsConditionsPage: React.FC<TermsConditionsPageProps> = ({ onNavi
               Natural stone must be installed using high-grade, polymer-modified adhesives and water-resistant backing sealers suitable for Indian climatic conditions.
             </p>
             <p>
-              Simplex certifies raw slab compliance with international standards (IS 1121 compressive strength, IS 1124 water absorption, and CE dimensional tolerance). Simplex does not assume liability for damages arising from improper structural sub-base preparation, defective mortar mixtures, acidic cleaning agents, or third-party installation craftsmanship.
+              Simplex Marble Granite certifies raw slab compliance with international standards (IS 1121 compressive strength, IS 1124 water absorption, and CE dimensional tolerance). Simplex Marble Granite does not assume liability for damages arising from improper structural sub-base preparation, defective mortar mixtures, acidic cleaning agents, or third-party installation craftsmanship.
             </p>
           </section>
 

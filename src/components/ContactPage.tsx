@@ -84,7 +84,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
         {/* Page Header */}
         <div className="mb-12 space-y-4 max-w-3xl">
           <div className="flex items-center gap-2 text-xs tracking-widest uppercase text-[#7D776E]">
-            <span>Simplex Atelier</span>
+            <span>Simplex Marble Granite</span>
             <span>/</span>
             <span className="text-[#8F704D] font-medium">Trade Desk & Concierge</span>
           </div>
@@ -159,7 +159,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
             <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DCD9D1] shadow-xs space-y-2">
               <div className="flex items-center gap-2 text-xs font-semibold text-[#8F704D]">
                 <ShieldCheck className="w-4 h-4" />
-                <span>Simplex Mumbai Quality Assurance</span>
+                <span>Simplex Marble Granite Quality Assurance</span>
               </div>
               <p className="text-[11px] text-[#5C574F] font-light leading-relaxed">
                 All slab consignments include Italian & Brazilian origin certificates, ultrasonic structural density tests, GST 18% ITC invoices, and sequential slab bookmatch maps.

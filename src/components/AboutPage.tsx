@@ -47,7 +47,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
   const mumbaiLocations = [
     { 
       type: 'Flagship Gallery & Selection Atelier', 
-      name: 'Simplex Luxury Marble & Surfaces',
+      name: 'Simplex Marble Granite',
       address: 'Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057', 
       phone: '+91 99673 74940 / +91 99677 33305',
       hours: 'Mon – Sat: 10:00 AM – 7:30 PM (Sun by Appointment)',
@@ -63,13 +63,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         <div className="space-y-6 text-center max-w-3xl mx-auto pt-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFFFFF] border border-[#DCD9D1] text-[#8F704D] text-[11px] font-medium tracking-[0.2em] uppercase shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-[#8F704D]" />
-            Heritage & Craftsmanship • Mumbai, India
+            Simplex Marble Granite • Mumbai, India
           </div>
           <h1 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-[#1A1A1A]">
             The Art of Natural Stone in India
           </h1>
           <p className="text-[#5C574F] text-base sm:text-lg font-light leading-relaxed">
-            Headquartered exclusively in Mumbai, Simplex bridges the world’s most pristine geological quarries with timeless luxury architectural residences and private estates across India.
+            Headquartered exclusively in Mumbai, Simplex Marble Granite bridges the world’s most pristine geological quarries with timeless luxury architectural residences and private estates across India.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               Natural stone is not merely a decorative building surface; it is millions of years of continental pressure, thermal crystallization, and Earth's poetry frozen in solid mineral form.
             </p>
             <p className="text-xs sm:text-sm text-[#5C574F] font-light leading-relaxed">
-              At Simplex Mumbai, we import directly from exclusive concession partnerships across 48 heritage quarries in Italy, Brazil, Greece, and Spain, complemented by Rajasthan's rare royal white marbles. Every single slab arriving at our Mumbai stockyard undergoes ultrasonic testing for structural soundness and moisture calibration for India's diverse climatic zones.
+              At Simplex Marble Granite, we import directly from exclusive concession partnerships across 48 heritage quarries in Italy, Brazil, Greece, and Spain, complemented by Rajasthan's rare royal white marbles. Every single slab arriving at our Mumbai selection yard undergoes ultrasonic testing for structural soundness and moisture calibration for India's diverse climatic zones.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4 text-xs">
@@ -103,14 +103,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             <div className="rounded-3xl overflow-hidden bg-[#1A1A1A] border border-[#DCD9D1] shadow-xl">
               <img
                 src="/images/home_section_1_flip.webp"
-                alt="Simplex Atelier Mumbai Bookmatched Marble Selection"
+                alt="Simplex Marble Granite Mumbai Bookmatched Marble Selection"
                 className="w-full h-[450px] object-cover"
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-[#FFFFFF] border border-[#DCD9D1] p-5 rounded-2xl shadow-lg hidden sm:block max-w-xs">
               <div className="flex items-center gap-2 text-xs text-[#8F704D] font-semibold uppercase tracking-wider mb-1">
                 <ShieldCheck className="w-4 h-4" />
-                <span>Mumbai Quality Protocol</span>
+                <span>Simplex Marble Granite Protocol</span>
               </div>
               <p className="text-[11px] text-[#5C574F] font-light">
                 Digital photogrammetry & dry-lay vein tracking at our Mumbai central yard.
@@ -146,12 +146,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         <div className="space-y-8 p-8 sm:p-12 rounded-3xl bg-[#FFFFFF] border border-[#DCD9D1] shadow-sm">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#8F704D] font-semibold">Flagship Atelier & Yard in Mumbai</span>
+              <span className="text-xs font-mono uppercase tracking-widest text-[#8F704D] font-semibold">Flagship Gallery in Mumbai</span>
               <h2 className="font-cinzel text-3xl font-bold text-[#1A1A1A] mt-1">
-                Our Mumbai Experience Spaces
+                Simplex Marble Granite Selection Gallery
               </h2>
               <p className="text-xs text-[#5C574F] max-w-lg mt-1 font-light">
-                We operate our physical atelier and master slab inventory exclusively in Mumbai, offering private gantry crane viewings for architects, designers, and homeowners.
+                Simplex Marble Granite welcomes architects, interior designers, and homeowners to our flagship selection gallery in Vile Parle (E), Mumbai.
               </p>
             </div>
             <a

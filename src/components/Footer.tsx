@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6 space-y-2">
-              <span className="text-xs uppercase font-mono tracking-widest text-[#C5A880]">The Simplex Monograph</span>
+              <span className="text-xs uppercase font-mono tracking-widest text-[#C5A880]">The Simplex Marble Granite Monograph</span>
               <h3 className="font-cinzel text-2xl sm:text-3xl font-bold text-[#F8F7F4]">
                 Receive Quarterly Geological Reserves
               </h3>
@@ -86,9 +86,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
               <div className="w-8 h-8 rounded-lg bg-[#C5A880] flex items-center justify-center text-[#1A1A1A] font-cinzel font-bold text-lg shadow-sm">
                 S
               </div>
-              <span className="font-cinzel text-xl font-bold tracking-[0.25em] text-[#F8F7F4] group-hover:text-[#C5A880] transition-colors">
-                SIMPLEX
-              </span>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-cinzel text-lg sm:text-xl font-bold tracking-[0.25em] text-[#F8F7F4] group-hover:text-[#C5A880] transition-colors">
+                    SIMPLEX
+                  </span>
+                  {/* <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880]"></span> */}
+                </div>
+                <span className="text-[8px] tracking-[0.35em] uppercase text-[#A8A298] font-medium font-outfit">
+                  marble • granite • tiles
+                </span>
+              </div>
             </a>
 
             <p className="text-xs text-[#A8A298] font-light leading-relaxed max-w-sm">
@@ -263,7 +271,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
         {/* Bottom Bar */}
         <div className="mt-14 pt-8 border-t border-[#2E2B26] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8A847A]">
           <div>
-            © {new Date().getFullYear()} Simplex Marble & Architectural Surfaces Pvt. Ltd. (Mumbai, India). All rights reserved.
+            © {new Date().getFullYear()} Simplex Marble Granite (Mumbai, India). All rights reserved.
           </div>
 
           <div className="flex items-center gap-6">
