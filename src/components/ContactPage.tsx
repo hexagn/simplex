@@ -148,10 +148,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   <strong className="text-[#8F704D] block font-cinzel font-semibold">Flagship Gallery & Selection Yard</strong>
                   <span>Marble Market, Service Road, Near Jay Apartment, W.E. Highway, Vile Parle (E), Mumbai - 400057</span>
                 </div>
-                <div>
+                {/* <div>
                   <strong className="text-[#8F704D] block font-cinzel font-semibold">Pan-India White-Glove Dispatch</strong>
                   <span>Direct crane truck transport to Mumbai, Delhi NCR, Bangalore, Goa, Alibaug, Hyderabad & all states.</span>
-                </div>
+                </div> */}
               </div>
             </div>
 
